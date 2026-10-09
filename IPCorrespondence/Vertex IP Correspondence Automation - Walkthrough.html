@@ -114,6 +114,20 @@
     font-size:16.5px;
     color:#E4D7F3;
   }
+  .hero-scrollcue{
+    display:flex;align-items:center;gap:10px;
+    margin:34px 0 0;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:#D9B8FF;text-decoration:none;width:fit-content;
+  }
+  .hero-scrollcue .chevron-down{
+    width:20px;height:20px;border-radius:50%;
+    border:1.5px solid rgba(217,184,255,.5);
+    display:flex;align-items:center;justify-content:center;
+    animation:cue-bob 2.2s ease-in-out infinite;
+  }
+  .hero-scrollcue:hover .chevron-down{border-color:#D9B8FF;}
+  @keyframes cue-bob{0%,100%{transform:translateY(0);}50%{transform:translateY(4px);}}
 
   /* hero artifact: email card */
   .hero-artifact{display:flex;flex-direction:column;gap:14px;}
@@ -197,9 +211,60 @@
   nav.toc a:hover{border-bottom-color:var(--accenture);color:var(--vertex);}
   nav.toc a.active{color:var(--vertex);border-bottom-color:var(--vertex);}
 
+  /* ---------- Chapter rail (presentation progress) ---------- */
+  .chapter-rail{
+    position:fixed;
+    right:22px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:19;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:7px;
+  }
+  .chapter-rail a{
+    display:flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:50%;
+    font-family:var(--mono);font-size:10.5px;font-weight:600;
+    color:var(--slate);background:#FFFFFF;
+    border:1.5px solid var(--line-strong);
+    text-decoration:none;
+    transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+  }
+  .chapter-rail a:hover{border-color:var(--accenture);color:var(--vertex);}
+  .chapter-rail a.active{
+    background:var(--vertex);border-color:var(--vertex);color:#F6F1FB;
+    transform:scale(1.14);
+  }
+  .chapter-rail::before{
+    content:"";position:absolute;left:50%;top:-16px;bottom:-16px;width:1px;
+    background:var(--line-strong);z-index:-1;transform:translateX(-50%);
+  }
+  @media (max-width:1180px){ .chapter-rail{display:none;} }
+
   main{max-width:1120px;margin:0 auto;padding:0 48px;}
-  section{padding:58px 0;border-bottom:1px solid var(--line);scroll-margin-top:64px;}
+  section{padding:58px 0;border-bottom:1px solid var(--line);scroll-margin-top:64px;position:relative;}
   section:last-of-type{border-bottom:none;}
+
+  /* chapter heading + large pale numeral — the sections are a genuine presented sequence (00→05) */
+  .chapter-head{position:relative;}
+  .chapter-num{
+    position:absolute;top:-6px;right:0;
+    font-family:var(--display);font-weight:700;
+    font-size:116px;line-height:1;
+    color:var(--vertex);opacity:.065;
+    pointer-events:none;user-select:none;
+  }
+  @media (max-width:900px){ .chapter-num{font-size:72px;} }
+  @media (max-width:640px){ .chapter-num{display:none;} }
+
+  /* scroll-reveal entrance */
+  section.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  section.reveal.in-view{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    section.reveal{opacity:1;transform:none;transition:none;}
+  }
 
   /* ref-tag eyebrow — echoes the FR-4 folder-naming convention (prefix/segments) */
   .ref-tag{
@@ -342,6 +407,10 @@
   /* ---------- Print ---------- */
   @media print{
     nav.toc{position:static;}
+    .chapter-rail{display:none;}
+    .hero-scrollcue{display:none;}
+    section.reveal{opacity:1;transform:none;}
+    .chapter-num{opacity:.08;}
     .diagram-embed iframe{height:900px;}
     .diagram-caption a{display:none;}
     header.hero{background:var(--vertex) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
@@ -365,6 +434,7 @@
       <p class="eyebrow">Accenture for Vertex Pharmaceuticals — Phase 1 Solution Walkthrough</p>
       <h1>The reference number is the key.<br>Phase 1 teaches the mailbox to read it instantly.</h1>
       <p class="hero-lede">A single-page walkthrough of the business problem, the automated process, the technical implementation, and the nine functional requirements being signed off for Phase 1.</p>
+      <a class="hero-scrollcue" href="#overview"><span class="chevron-down">&darr;</span>Begin walkthrough</a>
     </div>
     <div class="hero-artifact">
       <div class="email-card">
@@ -391,12 +461,24 @@
   <a href="#roadmap">Roadmap</a>
 </nav>
 
+<nav class="chapter-rail" aria-label="Walkthrough progress">
+  <a href="#overview" title="Overview">00</a>
+  <a href="#business-flow" title="Business Process">01</a>
+  <a href="#technical-flow" title="Technical Flow">02</a>
+  <a href="#requirements" title="Requirements">03</a>
+  <a href="#exceptions" title="Exceptions">04</a>
+  <a href="#roadmap" title="Roadmap">05</a>
+</nav>
+
 <main>
 
-  <section id="overview">
-    <span class="ref-tag">00-OVERVIEW</span>
-    <h2>Business Overview &amp; Problem Statement</h2>
-    <p class="lede">Today, Vertex IP Operations manually reviews every incoming email, identifies the patent family reference, locates (or creates) the matching folder, moves the email, and tracks exceptions. This consumes significant operational effort and relies heavily on individual knowledge of folder structures and reference formats.</p>
+  <section id="overview" class="reveal">
+    <div class="chapter-head">
+      <span class="chapter-num" aria-hidden="true">00</span>
+      <span class="ref-tag">00-OVERVIEW</span>
+      <h2>Business Overview &amp; Problem Statement</h2>
+      <p class="lede">Today, Vertex IP Operations manually reviews every incoming email, identifies the patent family reference, locates (or creates) the matching folder, moves the email, and tracks exceptions. This consumes significant operational effort and relies heavily on individual knowledge of folder structures and reference formats.</p>
+    </div>
 
     <div class="grid-2">
       <div class="card card-before">
@@ -424,10 +506,13 @@
     </div>
   </section>
 
-  <section id="business-flow">
-    <span class="ref-tag">01-PROCESS</span>
-    <h2>High-Level Business Process Flow</h2>
-    <p class="lede">The agent reads every new email, scans for a reference number, validates the folder-naming rule, and either files the email or raises a documented exception — then sends one consolidated report to business owners at the end of the day.</p>
+  <section id="business-flow" class="reveal">
+    <div class="chapter-head">
+      <span class="chapter-num" aria-hidden="true">01</span>
+      <span class="ref-tag">01-PROCESS</span>
+      <h2>High-Level Business Process Flow</h2>
+      <p class="lede">The agent reads every new email, scans for a reference number, validates the folder-naming rule, and either files the email or raises a documented exception — then sends one consolidated report to business owners at the end of the day.</p>
+    </div>
     <div class="diagram-stage">
       <div class="diagram-embed">
         <iframe src=".archify/architecture-vertex-email-rules-20261007-181400/vertex-email-rules.html?theme=light" title="High-level business process flow diagram (interactive)" loading="lazy"></iframe>
@@ -436,10 +521,13 @@
     <p class="diagram-caption">Vertex Email Rules Agent — business process flow. Interactive: use the Live/Still toggle inside the diagram to play the trace animation. <a href=".archify/architecture-vertex-email-rules-20261007-181400/vertex-email-rules.html" target="_blank" rel="noopener">Open full-screen ↗</a></p>
   </section>
 
-  <section id="technical-flow">
-    <span class="ref-tag">02-TECHNICAL</span>
-    <h2>Technical Implementation Flow</h2>
-    <p class="lede">Phase 1 is implemented on four coordinated components: Outlook + Power Automate for ingestion and filing, Azure OpenAI (via Azure AI Foundry) for reference extraction, a deterministic Power Automate validator for folder-naming rules, and Dataverse for the activity/exception log that feeds a second, independent daily-report flow.</p>
+  <section id="technical-flow" class="reveal">
+    <div class="chapter-head">
+      <span class="chapter-num" aria-hidden="true">02</span>
+      <span class="ref-tag">02-TECHNICAL</span>
+      <h2>Technical Implementation Flow</h2>
+      <p class="lede">Phase 1 is implemented on four coordinated components: Outlook + Power Automate for ingestion and filing, Azure OpenAI (via Azure AI Foundry) for reference extraction, a deterministic Power Automate validator for folder-naming rules, and Dataverse for the activity/exception log that feeds a second, independent daily-report flow.</p>
+    </div>
     <div class="diagram-stage">
       <div class="diagram-embed">
         <iframe src=".archify/workflow-vertex-technical-implementation-20261008-092901/vertex-technical-implementation.html?theme=light" title="Technical implementation workflow diagram (interactive)" loading="lazy"></iframe>
@@ -468,10 +556,13 @@
     </div>
   </section>
 
-  <section id="requirements">
-    <span class="ref-tag">03-SIGNOFF</span>
-    <h2>Functional Requirements (FR-1 – FR-9)</h2>
-    <p class="lede">Nine consolidated requirement areas, each traceable to the detailed functional design and the solution architecture — the basis for client review and sign-off.</p>
+  <section id="requirements" class="reveal">
+    <div class="chapter-head">
+      <span class="chapter-num" aria-hidden="true">03</span>
+      <span class="ref-tag">03-SIGNOFF</span>
+      <h2>Functional Requirements (FR-1 – FR-9)</h2>
+      <p class="lede">Nine consolidated requirement areas, each traceable to the detailed functional design and the solution architecture — the basis for client review and sign-off.</p>
+    </div>
     <table>
       <thead><tr><th style="width:90px;">ID</th><th>Requirement Area</th><th>Summary</th></tr></thead>
       <tbody>
@@ -489,10 +580,13 @@
     <p style="font-size:13px;color:var(--slate);">Full requirement-level detail (FR-1.1 through FR-9.6) is in the Vertex IP FDD, Section 5 — Functional Requirements, and in <code>Vertex IP FDD - Functional Requirements.md</code>.</p>
   </section>
 
-  <section id="exceptions">
-    <span class="ref-tag">04-EXCEPTIONS</span>
-    <h2>Exception Handling Rules</h2>
-    <p class="lede">Every scenario the agent cannot resolve automatically is documented, left untouched for manual review, and included in the daily report — the agent never guesses.</p>
+  <section id="exceptions" class="reveal">
+    <div class="chapter-head">
+      <span class="chapter-num" aria-hidden="true">04</span>
+      <span class="ref-tag">04-EXCEPTIONS</span>
+      <h2>Exception Handling Rules</h2>
+      <p class="lede">Every scenario the agent cannot resolve automatically is documented, left untouched for manual review, and included in the daily report — the agent never guesses.</p>
+    </div>
     <table>
       <thead><tr><th style="width:170px;">Exception</th><th>Condition</th><th>Action</th></tr></thead>
       <tbody>
@@ -506,10 +600,13 @@
     </table>
   </section>
 
-  <section id="roadmap">
-    <span class="ref-tag">05-ROADMAP</span>
-    <h2>Future Phase Roadmap</h2>
-    <p class="lede">Phase 1 already uses Azure OpenAI (via Foundry) for reference extraction. The items below are additional, not-yet-scoped enhancements for future phases.</p>
+  <section id="roadmap" class="reveal">
+    <div class="chapter-head">
+      <span class="chapter-num" aria-hidden="true">05</span>
+      <span class="ref-tag">05-ROADMAP</span>
+      <h2>Future Phase Roadmap</h2>
+      <p class="lede">Phase 1 already uses Azure OpenAI (via Foundry) for reference extraction. The items below are additional, not-yet-scoped enhancements for future phases.</p>
+    </div>
 
     <div class="roadmap-grid">
       <div class="roadmap-card">
@@ -542,22 +639,39 @@
 </footer>
 <script>
 (function(){
-  var links = document.querySelectorAll('nav.toc a');
+  var links = document.querySelectorAll('nav.toc a, nav.chapter-rail a');
   var sections = document.querySelectorAll('main section[id]');
   if(!links.length || !sections.length || !('IntersectionObserver' in window)) return;
   var byId = {};
-  links.forEach(function(a){ byId[a.getAttribute('href').slice(1)] = a; });
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    (byId[id] = byId[id] || []).push(a);
+  });
   var observer = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
-      var link = byId[entry.target.id];
-      if(!link) return;
+      var matches = byId[entry.target.id];
+      if(!matches) return;
       if(entry.isIntersecting){
         links.forEach(function(a){ a.classList.remove('active'); });
-        link.classList.add('active');
+        matches.forEach(function(a){ a.classList.add('active'); });
       }
     });
   }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
   sections.forEach(function(s){ observer.observe(s); });
+
+  // Scroll-reveal entrance for each chapter section
+  var revealSections = document.querySelectorAll('main section.reveal');
+  if(revealSections.length){
+    var revealObserver = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    revealSections.forEach(function(s){ revealObserver.observe(s); });
+  }
 })();
 </script>
 
