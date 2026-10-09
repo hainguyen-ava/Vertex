@@ -1,0 +1,1633 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "workflow",
+  "quality": "showcase",
+  "startedAt": "2026-10-09T11:57:52.110Z",
+  "specification": {
+    "path": "C:\\Temp\\archify-vertex-technical\\candidate.json",
+    "sha256": "9cfc96f8e90bf2eec7cf69dccd44f8e359f0783c7cdfa61b5e493037ce365af4",
+    "bytes": 7046
+  },
+  "artifact": {
+    "path": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+    "sha256": "92ef8863a112d70d628375f696cf4014a40f5975697ba1c8dc5e936986eab65d",
+    "bytes": 769829
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "workflow",
+        "C:\\Temp\\archify-vertex-technical\\candidate.json",
+        "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "9cfc96f8e90bf2eec7cf69dccd44f8e359f0783c7cdfa61b5e493037ce365af4",
+          "bytes": 7046
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 3598,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "workflow",
+        "C:\\Temp\\archify-vertex-technical\\candidate.json",
+        "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "2e68814f-664e-4bbd-8eb6-cd1dd816af01",
+        "ok": true,
+        "command": "deliver",
+        "type": "workflow",
+        "input": "C:\\Temp\\archify-vertex-technical\\candidate.json",
+        "output": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "specification": {
+          "sha256": "9cfc96f8e90bf2eec7cf69dccd44f8e359f0783c7cdfa61b5e493037ce365af4",
+          "bytes": 7046
+        },
+        "artifact": {
+          "sha256": "92ef8863a112d70d628375f696cf4014a40f5975697ba1c8dc5e936986eab65d",
+          "bytes": 769829
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 1890,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
+        "check",
+        "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "artifact": {
+          "sha256": "92ef8863a112d70d628375f696cf4014a40f5975697ba1c8dc5e936986eab65d",
+          "bytes": 769829
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 0,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 34.5,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 6.179401993355482,
+            "maxBends": 2,
+            "routesOverSuggestedBends": 0,
+            "maxStretch": 1.063,
+            "routesOverSuggestedStretch": 0,
+            "minSegmentPx": 28,
+            "minInteriorSegmentPx": 769,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [],
+            "detours": []
+          },
+          "leadingSpace": {
+            "measured": false,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "legacy-930",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 930,
+            "actualBudgetPx": 930,
+            "limit": "legacy",
+            "requestedTargetPx": null,
+            "requestedTargetMet": null,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "node",
+              "id": "new_email"
+            },
+            "minimumSourceTextPx": 8,
+            "minimumProjectedTextPx": 6.179401993355482,
+            "semanticTextCount": 34
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "2e68814f-664e-4bbd-8eb6-cd1dd816af01"
+      }
+    },
+    "browser-check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 3617,
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
+        "browser-check",
+        "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "--json",
+        "--require-provenance"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "pass",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "2e68814f-664e-4bbd-8eb6-cd1dd816af01",
+        "artifact": {
+          "path": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+          "sha256": "92ef8863a112d70d628375f696cf4014a40f5975697ba1c8dc5e936986eab65d",
+          "bytes": 769829
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "C:\\Users\\hai.a.nguyen\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe"
+        },
+        "diagnostics": [],
+        "containment": {
+          "status": "pass",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 900,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1344,
+              "diagramWidth": 1314,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 78,
+                "diagramChromePx": 78,
+                "svgPx": 720,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 116,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 74,
+                  "spaceAboveNodesPx": 37,
+                  "spaceBelowNodesPx": 4
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 116,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 74,
+                  "spaceAboveNodesPx": 37,
+                  "spaceBelowNodesPx": 4
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 116,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 57,
+                  "spaceAboveNodesPx": 46,
+                  "spaceBelowNodesPx": 13
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 116,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 57,
+                  "spaceAboveNodesPx": 46,
+                  "spaceBelowNodesPx": 13
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1000,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1406,
+              "diagramWidth": 1376,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 754,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 121,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 78,
+                  "spaceAboveNodesPx": 39,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 121,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 78,
+                  "spaceAboveNodesPx": 39,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 121,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 59,
+                  "spaceAboveNodesPx": 48,
+                  "spaceBelowNodesPx": 14
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 121,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 59,
+                  "spaceAboveNodesPx": 48,
+                  "spaceBelowNodesPx": 14
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1552,
+              "diagramWidth": 1522,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 834,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 134,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 86,
+                  "spaceAboveNodesPx": 43,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 134,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 86,
+                  "spaceAboveNodesPx": 43,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 134,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 66,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 15
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 134,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 66,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 15
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1920,
+              "diagramWidth": 1870,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 94,
+                "diagramChromePx": 94,
+                "svgPx": 1025,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 165,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 106,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 6
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 165,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 106,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 6
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 165,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 81,
+                  "spaceAboveNodesPx": 65,
+                  "spaceBelowNodesPx": 19
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 165,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 81,
+                  "spaceAboveNodesPx": 65,
+                  "spaceBelowNodesPx": 19
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "themeStates": {
+          "status": "pass",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1440,
+              "height": 900,
+              "requestedTheme": "dark",
+              "resolvedTheme": "dark",
+              "ok": true
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "requestedTheme": "dark",
+              "resolvedTheme": "dark",
+              "ok": true
+            }
+          ]
+        },
+        "readability": {
+          "status": "pass",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 900,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1344,
+              "diagramWidth": 1314,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 78,
+                "diagramChromePx": 78,
+                "svgPx": 720,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 116,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 74,
+                  "spaceAboveNodesPx": 37,
+                  "spaceBelowNodesPx": 4
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 116,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 74,
+                  "spaceAboveNodesPx": 37,
+                  "spaceBelowNodesPx": 4
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 116,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 57,
+                  "spaceAboveNodesPx": 46,
+                  "spaceBelowNodesPx": 13
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 116,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 57,
+                  "spaceAboveNodesPx": 46,
+                  "spaceBelowNodesPx": 13
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1000,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1406,
+              "diagramWidth": 1376,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 754,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 121,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 78,
+                  "spaceAboveNodesPx": 39,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 121,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 78,
+                  "spaceAboveNodesPx": 39,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 121,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 59,
+                  "spaceAboveNodesPx": 48,
+                  "spaceBelowNodesPx": 14
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 121,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 59,
+                  "spaceAboveNodesPx": 48,
+                  "spaceBelowNodesPx": 14
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1552,
+              "diagramWidth": 1522,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 834,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 134,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 86,
+                  "spaceAboveNodesPx": 43,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 134,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 86,
+                  "spaceAboveNodesPx": 43,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 134,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 66,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 15
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 134,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 66,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 15
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1920,
+              "diagramWidth": 1870,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 94,
+                "diagramChromePx": 94,
+                "svgPx": 1025,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 165,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 106,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 6
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 165,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 106,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 6
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 165,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 81,
+                  "spaceAboveNodesPx": 65,
+                  "spaceBelowNodesPx": 19
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 165,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 81,
+                  "spaceAboveNodesPx": 65,
+                  "spaceBelowNodesPx": 19
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "viewerChrome": {
+          "status": "pass",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 900,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1344,
+              "diagramWidth": 1314,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 78,
+                "diagramChromePx": 78,
+                "svgPx": 720,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 116,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 74,
+                  "spaceAboveNodesPx": 37,
+                  "spaceBelowNodesPx": 4
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 116,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 74,
+                  "spaceAboveNodesPx": 37,
+                  "spaceBelowNodesPx": 4
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 116,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 57,
+                  "spaceAboveNodesPx": 46,
+                  "spaceBelowNodesPx": 13
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 116,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 57,
+                  "spaceAboveNodesPx": 46,
+                  "spaceBelowNodesPx": 13
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1000,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1406,
+              "diagramWidth": 1376,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 754,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 121,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 78,
+                  "spaceAboveNodesPx": 39,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 121,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 78,
+                  "spaceAboveNodesPx": 39,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 121,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 59,
+                  "spaceAboveNodesPx": 48,
+                  "spaceBelowNodesPx": 14
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 121,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 59,
+                  "spaceAboveNodesPx": 48,
+                  "spaceBelowNodesPx": 14
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1552,
+              "diagramWidth": 1522,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 86,
+                "diagramChromePx": 84,
+                "svgPx": 834,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 134,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 86,
+                  "spaceAboveNodesPx": 43,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 134,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 86,
+                  "spaceAboveNodesPx": 43,
+                  "spaceBelowNodesPx": 5
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 134,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 66,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 15
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 134,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 66,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 15
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": null,
+              "ok": true,
+              "readerWidth": 1920,
+              "diagramWidth": 1870,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 94,
+                "diagramChromePx": 94,
+                "svgPx": 1025,
+                "cardsPx": 0,
+                "viewBoxHeight": 660
+              },
+              "viewBoxWidth": 1204,
+              "workflowLanes": [
+                {
+                  "frameId": "lane-0",
+                  "heightPx": 165,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "new_email",
+                    "get_email",
+                    "parse_decision",
+                    "validate_gate",
+                    "file_email"
+                  ],
+                  "nodeSpanPx": 106,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 6
+                },
+                {
+                  "frameId": "lane-1",
+                  "heightPx": 165,
+                  "nodeCount": 1,
+                  "nodeIds": [
+                    "agent_call"
+                  ],
+                  "nodeSpanPx": 106,
+                  "spaceAboveNodesPx": 53,
+                  "spaceBelowNodesPx": 6
+                },
+                {
+                  "frameId": "lane-2",
+                  "heightPx": 165,
+                  "nodeCount": 2,
+                  "nodeIds": [
+                    "log_exception",
+                    "activity_log"
+                  ],
+                  "nodeSpanPx": 81,
+                  "spaceAboveNodesPx": 65,
+                  "spaceBelowNodesPx": 19
+                },
+                {
+                  "frameId": "lane-3",
+                  "heightPx": 165,
+                  "nodeCount": 5,
+                  "nodeIds": [
+                    "daily_timer",
+                    "query_log",
+                    "compose_report",
+                    "send_report",
+                    "business_owners"
+                  ],
+                  "nodeSpanPx": 81,
+                  "spaceAboveNodesPx": 65,
+                  "spaceBelowNodesPx": 19
+                }
+              ],
+              "minimumProjectedNodeTextPx": 8,
+              "minimumProjectedNonEdgeTextPx": 8,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "new_email"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "receipt": "vertex-technical-implementation.browser-check.json",
+          "files": []
+        }
+      }
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "receipt": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.finalize.json",
+    "summaryReceipt": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "finishedAt": "2026-10-09T11:58:02.942Z",
+  "durationMs": 10832,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-09T11:55:02.534Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}

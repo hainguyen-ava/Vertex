@@ -1,0 +1,58 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Vertex IP Correspondence Automation — Technical Implementation",
+    "subtitle": "Outlook + Power Automate + Azure OpenAI (via Foundry) + Dataverse",
+    "output": "vertex-technical-implementation.html",
+    "quality_profile": "showcase",
+    "animation": "trace"
+  },
+  "lanes": [
+    { "id": "flow1", "label": "Outlook + Power Automate (Email Flow)" },
+    { "id": "agent", "label": "Azure OpenAI (via Foundry)" },
+    { "id": "dataverse", "label": "Exception Handling + Dataverse Log" },
+    { "id": "flow2", "label": "Power Automate (Daily Report) + Business Owners" }
+  ],
+  "phases": [],
+  "mainPath": ["new_email", "get_email", "agent_call", "parse_decision", "validate_gate", "file_email", "activity_log"],
+  "nodes": [
+    { "id": "new_email", "lane": "flow1", "col": 0, "type": "external", "label": "New Email Arrives", "sublabel": "Outlook trigger", "width": 120 },
+    { "id": "get_email", "lane": "flow1", "col": 1, "type": "backend", "label": "Get Email + Thread", "sublabel": "Subject + body", "width": 130 },
+    { "id": "agent_call", "lane": "agent", "col": 2, "type": "backend", "label": "Call Azure OpenAI", "sublabel": "Returns JSON only", "tag": "Instructions + Skill", "width": 145 },
+    { "id": "parse_decision", "lane": "flow1", "col": 3, "type": "backend", "label": "Parse JSON + Decide", "sublabel": "Power Automate", "tag": "Condition action", "width": 150 },
+    { "id": "validate_gate", "lane": "flow1", "col": 4, "type": "backend", "label": "Folder Rule Validator", "sublabel": "Condition action", "width": 145 },
+        { "id": "file_email", "lane": "flow1", "col": 5, "type": "backend", "label": "File + Move Email", "sublabel": "Outlook connector", "width": 150 },
+        { "id": "log_exception", "lane": "dataverse", "col": 4, "type": "backend", "label": "Log Exception", "sublabel": "No ref / invalid format", "width": 145 },
+        { "id": "activity_log", "lane": "dataverse", "col": 5, "type": "database", "label": "Activity Log", "sublabel": "Dataverse table", "width": 150 },
+    { "id": "daily_timer", "lane": "flow2", "col": 0, "type": "external", "label": "Daily Recurrence Trigger", "sublabel": "5:00 PM Eastern", "width": 185 },
+    { "id": "query_log", "lane": "flow2", "col": 1, "type": "backend", "label": "Query Dataverse Log", "sublabel": "Rows created today", "width": 150 },
+    { "id": "compose_report", "lane": "flow2", "col": 2, "type": "backend", "label": "Compose Daily Report", "sublabel": "Folders, filings, exceptions", "width": 160 },
+    { "id": "send_report", "lane": "flow2", "col": 3, "type": "backend", "label": "Send Report Email", "sublabel": "Outlook connector", "width": 150 },
+    { "id": "business_owners", "lane": "flow2", "col": 4, "type": "external", "label": "Business Owners", "sublabel": "Daily report recipients", "width": 150 }
+  ],
+  "edges": [
+    { "id": "email-to-get", "from": "new_email", "to": "get_email", "variant": "emphasis", "role": "main" },
+    { "id": "get-to-call", "from": "get_email", "to": "agent_call", "variant": "emphasis", "role": "main" },
+    { "id": "call-to-parse", "from": "agent_call", "to": "parse_decision", "label": "JSON result", "variant": "emphasis", "role": "main" },
+    { "id": "parse-to-validate", "from": "parse_decision", "to": "validate_gate", "label": "ref found", "variant": "emphasis", "role": "main" },
+    { "id": "parse-to-exception", "from": "parse_decision", "to": "log_exception", "label": "not found", "variant": "dashed", "role": "branch" },
+    { "id": "validate-to-file", "from": "validate_gate", "to": "file_email", "label": "valid", "variant": "emphasis", "role": "main" },
+    { "id": "validate-to-exception", "from": "validate_gate", "to": "log_exception", "label": "invalid", "variant": "dashed", "role": "error" },
+    { "id": "file-to-log", "from": "file_email", "to": "activity_log", "label": "filed", "variant": "emphasis", "role": "main" },
+    { "id": "exception-to-log", "from": "log_exception", "to": "activity_log", "label": "logged", "variant": "dashed", "role": "branch" },
+    { "id": "timer-to-query", "from": "daily_timer", "to": "query_log", "variant": "emphasis", "role": "main" },
+    { "id": "log-to-query", "from": "activity_log", "to": "query_log", "label": "read day's activity", "variant": "dashed", "role": "return" },
+    { "id": "query-to-compose", "from": "query_log", "to": "compose_report", "variant": "emphasis", "role": "main" },
+    { "id": "compose-to-send", "from": "compose_report", "to": "send_report", "variant": "emphasis", "role": "main" },
+    { "id": "send-to-owners", "from": "send_report", "to": "business_owners", "variant": "emphasis", "role": "main" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Trigger & ingestion", "items": ["Outlook \"When a new email arrives (V3)\" trigger scoped to the shared mailbox", "Includes new messages, replies, and acknowledgements"] },
+    { "dot": "violet", "title": "Agent: instructions + skill (Azure OpenAI via Foundry)", "items": ["Instructions: system prompt encodes Ref # lead-in phrases (\"Client Reference:\", \"Your Ref\", etc.) and known matter prefixes", "Skill: identifies the Ref # in the title/body and maps known prefixes/aliases to the right matter — a trainable component business can extend with new mapping rules, without rewriting the core instructions", "Output only: the agent call always returns a structured JSON result string — reference, is_vertex, segments, normalized_value, confidence. The agent never branches or decides."] },
+    { "dot": "amber", "title": "Parse JSON + Decide (deterministic, in Power Automate)", "items": ["Power Automate's Parse JSON action reads the result string returned to the Power App/flow", "A Condition action then makes the ref-found vs. ref-not-found decision — this logic lives entirely in the flow, not in the Azure OpenAI call", "Found → continues to the Folder Rule Validator; not found → routes straight to Log Exception"] },
+    { "dot": "amber", "title": "Folder Rule Validator (deterministic, in Power Automate)", "items": ["Implemented as a Condition/Switch action in the flow, not a model call", "Vertex reference: exactly 2 segments (e.g. 00-113)", "Non-Vertex reference: prefix + 2 segments (e.g. SEM-24-783)", "Country-code suffixes stripped before validation"] },
+    { "dot": "emerald", "title": "Dataverse schema", "items": ["One table: Message ID, Sender, Subject, Reference, Folder, Result, Timestamp (UTC), Exception Type", "Result = Filed / Created Folder and Filed / Exception", "Index on Timestamp + Result for fast daily queries"] },
+    { "dot": "rose", "title": "Implementation recommendations", "items": ["Check Dataverse for an existing Message ID before filing, to make retries idempotent", "Wrap Outlook actions in a Scope with \"configure run after\" to catch failures as exceptions", "Keep the two flows independent: real-time filing never waits on the daily report"] }
+  ]
+}

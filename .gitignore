@@ -1,0 +1,4 @@
+.playwright-mcp/
+~$*.docx
+~$*.doc
+Thumbs.db

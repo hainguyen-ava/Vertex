@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Temp\\archify-vertex-dynamic2\\candidate.json",
+    "sha256": "bd3db5232298773b3bd572af702b176e3f97c52d83372b86864c6b369e75c392",
+    "bytes": 4208
+  },
+  "artifact": {
+    "path": "C:\\Temp\\archify-vertex-dynamic2\\vertex-email-rules.html",
+    "sha256": "487d7a0a9c7d1a546cd3846d9923eec816cc15eec3756d721b0f3aa11e122347",
+    "bytes": 763559
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Temp\\archify-vertex-dynamic2\\vertex-email-rules.finalize.json",
+    "summaryReceipt": "C:\\Temp\\archify-vertex-dynamic2\\vertex-email-rules.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Temp\\archify-vertex-dynamic2\\vertex-email-rules.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-07T22:46:10.818Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 9710
+}

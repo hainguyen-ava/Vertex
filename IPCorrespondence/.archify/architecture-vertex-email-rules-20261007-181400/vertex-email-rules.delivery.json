@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "25c29838-e101-4001-9c23-ac89e8619ca1",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Temp\\archify-vertex-email-rules\\candidate.json",
+  "output": "C:\\Temp\\archify-vertex-email-rules\\vertex-email-rules.html",
+  "specification": {
+    "sha256": "ba6be4ddb78233420d32b427fbd2b3dbda8ab96e093dbe71d27deeed90f52dc3",
+    "bytes": 3949
+  },
+  "artifact": {
+    "sha256": "c0a067bfb87128f9a2d471af784d0d37824faea74573d29954bcecaaf1769365",
+    "bytes": 761991
+  }
+}

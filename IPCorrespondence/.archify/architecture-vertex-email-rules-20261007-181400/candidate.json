@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Vertex Email Rules Agent",
+    "subtitle": "Ref # detection, folder routing, and daily reporting",
+    "output": "vertex-email-rules.html",
+    "quality_profile": "showcase",
+    "animation": "trace"
+  },
+  "components": [
+    { "id": "inbox", "type": "external", "label": "Email Inbox", "sublabel": "New incoming mail", "pos": [40, 100], "size": [130, 60] },
+    { "id": "agent", "type": "backend", "label": "Vertex Email Agent", "sublabel": "Reads every new email", "pos": [290, 100], "size": [150, 64] },
+    { "id": "ref_scanner", "type": "backend", "label": "Ref # Scanner", "sublabel": "Title, then content", "pos": [640, 100], "size": [150, 64] },
+    { "id": "validator", "type": "backend", "label": "Folder Rule Validator", "sublabel": "Vertex vs non-Vertex format", "pos": [900, 100], "size": [160, 64] },
+    { "id": "folder_manager", "type": "backend", "label": "Folder Manager", "sublabel": "Move or create folder", "pos": [1170, 100], "size": [150, 64] },
+    { "id": "folder_store", "type": "database", "label": "Mailbox Folders", "sublabel": "Existing Ref # folders", "pos": [1170, 260], "size": [150, 60] },
+    { "id": "activity_log", "type": "database", "label": "Activity Log", "sublabel": "New folders + unprocessed emails", "pos": [640, 260], "size": [150, 60] },
+    { "id": "report_generator", "type": "backend", "label": "Daily Report Generator", "sublabel": "Runs once at end of day", "pos": [625, 420], "size": [180, 64] },
+    { "id": "business_owners", "type": "external", "label": "Business Owners", "sublabel": "Daily report recipients", "pos": [960, 420], "size": [160, 60] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Vertex Email Rules Automation", "wraps": ["agent", "ref_scanner", "validator", "folder_manager", "folder_store", "activity_log", "report_generator"] }
+  ],
+  "connections": [
+    { "id": "inbox-to-agent", "from": "inbox", "to": "agent", "label": "new email arrives", "variant": "emphasis" },
+    { "id": "agent-to-scanner", "from": "agent", "to": "ref_scanner", "label": "scan title then content for Ref #" },
+    { "id": "scanner-to-validator", "from": "ref_scanner", "to": "validator", "label": "Ref # found", "variant": "emphasis" },
+    { "id": "scanner-to-log", "from": "ref_scanner", "to": "activity_log", "label": "no Ref # found \u2014 document reason, leave as-is", "variant": "dashed", "fromSide": "bottom", "toSide": "top" },
+    { "id": "validator-to-manager", "from": "validator", "to": "folder_manager", "label": "format valid" },
+    { "id": "validator-to-log", "from": "validator", "to": "activity_log", "label": "format invalid \u2014 leave as-is, log exception", "variant": "dashed", "fromSide": "bottom", "toSide": "top", "via": [[980, 200], [715, 200]] },
+    { "id": "manager-to-store", "from": "folder_manager", "to": "folder_store", "label": "match existing or create new folder", "fromSide": "bottom", "toSide": "top" },
+    { "id": "manager-to-log", "from": "folder_manager", "to": "activity_log", "label": "folder created or moved \u2014 log entry", "variant": "dashed", "fromSide": "bottom", "toSide": "top", "via": [[1245, 200], [715, 200]] },
+    { "id": "log-to-report", "from": "activity_log", "to": "report_generator", "label": "aggregate day's activity", "fromSide": "bottom", "toSide": "top" },
+    { "id": "report-to-owners", "from": "report_generator", "to": "business_owners", "label": "send daily report email", "variant": "emphasis" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Ref # detection", "items": ["Checked on the email title first, then the body", "Looked for after phrases like \"Client Reference:\", \"Your Ref\", \"Your Reference:\", \"Your Ref No\""] },
+    { "dot": "emerald", "title": "Folder naming rules", "items": ["Vertex Ref #: exactly 2 segments, e.g. 00-113, 00-128", "Non-Vertex Ref #: prefix + 2 segments, e.g. SEM-24-783, SEM-25-786"] },
+    { "dot": "rose", "title": "Daily report", "items": ["Sent once per day to business owners", "Lists folders created that day", "Lists unprocessed emails with the reason each could not be matched"] }
+  ]
+}
