@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Vertex IP Correspondence Automation Agent — Phase 1 solution walkthrough: business process, technical flow, and functional requirements FR-1–FR-9.">
+<title>Vertex IP Correspondence Automation — Solution Walkthrough</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#201c26;
+    --paper:#FAF9FC;
+    --panel:#F1ECF6;
+    --vertex:#52247F;
+    --accenture:#A100FF;
+    --slate:#63666A;
+    --line:#E1D8EC;
+    --line-strong:#CDBEE0;
+    --display: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+    --body-font: "IBM Plex Sans", "Segoe UI", Calibri, Arial, sans-serif;
+    --mono: "IBM Plex Mono", "Consolas", "SFMono-Regular", monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    font-family:var(--body-font);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    font-size:15.5px;
+  }
+  a{color:var(--vertex);}
+  :focus-visible{outline:2px solid var(--accenture);outline-offset:2px;}
+
+  /* ---------- Layout: binder rail + document pane ---------- */
+  .layout{display:grid;grid-template-columns:17.5rem minmax(0,1fr);min-height:100vh;}
+
+  /* ---------- Rail (binder spine) ---------- */
+  .rail{
+    position:sticky;top:0;height:100vh;overflow:auto;
+    padding:28px 22px;
+    background:linear-gradient(180deg,#2a1140 0%,var(--vertex) 58%,#4a2170 100%);
+    color:#F6F1FB;
+  }
+  .rail-brand{display:flex;flex-direction:column;gap:14px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.18);}
+  .rail-mark{display:flex;align-items:center;gap:8px;}
+  .rail-mark.accenture{font-weight:600;font-size:15.5px;letter-spacing:-.01em;color:#FFFFFF;}
+  .rail-mark.accenture .chevron{color:#D9B8FF;font-weight:700;}
+  .rail-mark.vertex .triangle{
+    width:0;height:0;flex:none;
+    border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid #D9B8FF;
+  }
+  .rail-mark.vertex .word{font-family:var(--display);font-size:12.5px;letter-spacing:.06em;color:#E4D7F3;}
+  .rail-mark.vertex .word b{color:#FFFFFF;}
+  .rail-eyebrow{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:#C9A6EC;margin:4px 0 0;
+  }
+  .rail-title{font-family:var(--display);font-size:18px;line-height:1.3;margin:2px 0 0;color:#FFFFFF;font-weight:600;}
+
+  .rail-nav{display:grid;gap:4px;margin:20px 0;}
+  .rail-nav a{
+    display:flex;align-items:center;gap:10px;
+    padding:9px 10px;border-radius:8px;
+    color:#E4D7F3;text-decoration:none;font-size:13.5px;font-weight:500;
+    border:1px solid transparent;
+  }
+  .rail-nav a .navnum{
+    font-family:var(--mono);font-size:11px;font-weight:700;color:#D9B8FF;
+    display:inline-flex;align-items:baseline;gap:1px;
+  }
+  .rail-nav a .navnum::before{content:"[";color:#B9FF6E;opacity:.7;}
+  .rail-nav a .navnum::after{content:"]";color:#B9FF6E;opacity:.7;}
+  .rail-nav a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);color:#FFFFFF;}
+  .rail-nav a.active{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:#FFFFFF;}
+  .rail-nav a.active .navnum{color:#B9FF6E;}
+
+  .rail-card{
+    margin-top:18px;padding:14px 14px 16px;
+    border:1px solid rgba(255,255,255,.16);border-radius:12px;
+    background:rgba(255,255,255,.06);
+    font-size:12px;color:#D9C7EE;line-height:1.55;
+  }
+  .rail-card strong{display:block;color:#FFFFFF;font-size:12.5px;margin-bottom:4px;}
+  .rail-card a{color:#B9FF6E;}
+
+  @media (max-width:960px){
+    .layout{grid-template-columns:1fr;}
+    .rail{position:relative;height:auto;}
+  }
+
+  /* ---------- Main document pane ---------- */
+  main{width:min(84rem,100%);margin:0 auto;padding:34px 40px 64px;}
+
+  /* chapter card — every section of the walkthrough is a bordered "page" in the binder */
+  section{
+    position:relative;
+    margin-top:22px;
+    padding:30px 34px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:#FFFFFF;
+    box-shadow:0 2px 16px rgba(82,36,127,.06);
+    scroll-margin-top:24px;
+  }
+  section:first-of-type{margin-top:0;}
+
+  section.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
+  section.reveal.in-view{opacity:1;transform:translateY(0);}
+
+  .ref-tag{
+    display:inline-flex;align-items:baseline;gap:2px;
+    font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.04em;
+    color:var(--vertex);margin-bottom:14px;
+  }
+  .ref-tag::before{content:"[";color:var(--accenture);font-weight:700;}
+  .ref-tag::after{content:"]";color:var(--accenture);font-weight:700;}
+
+  .chapter-num{
+    position:absolute;top:2px;right:26px;
+    font-family:var(--display);font-weight:700;font-size:92px;line-height:1;
+    color:var(--vertex);opacity:.06;pointer-events:none;user-select:none;
+  }
+  @media (max-width:760px){ .chapter-num{display:none;} }
+
+  h2{font-family:var(--display);font-size:27px;margin:0 0 14px;color:var(--ink);font-weight:600;}
+  h3{font-family:var(--display);font-size:18px;margin:26px 0 10px;color:var(--vertex);font-weight:600;}
+  p{color:var(--ink);margin:0 0 10px;}
+  .lede{font-size:16px;color:var(--slate);max-width:720px;margin:0;}
+
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px;}
+  @media (max-width:900px){ .grid-2,.grid-3{grid-template-columns:1fr;} }
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;}
+  .card h4{margin:0 0 10px;font-size:14px;color:var(--vertex);font-weight:700;}
+  .card ul{margin:0;padding-left:0;list-style:none;}
+  .card li{font-size:13.5px;margin-bottom:8px;color:var(--ink);padding-left:22px;position:relative;}
+  .card li::before{content:"–";position:absolute;left:2px;color:var(--slate);font-weight:600;}
+  .card.card-before{background:#F4F0F6;}
+  .card.card-before h4{color:var(--slate);}
+  .card.card-before li::before{content:"×";position:absolute;left:0;color:#B23A48;font-weight:700;}
+  .card.card-after{background:#FFFFFF;border:1px solid var(--line-strong);box-shadow:0 2px 12px rgba(82,36,127,.08);}
+  .card.card-after li::before{content:"✓";position:absolute;left:0;color:#1E8A5F;font-weight:700;}
+
+  /* diagrams: contained within the document card, not full-bleed (a persistent rail now owns the horizontal edge) */
+  .diagram-frame{
+    margin:20px -34px 6px;
+    padding:18px 34px;
+    background:linear-gradient(180deg,#f7f4fb 0%,#f1ecf6 100%);
+    border-top:1px solid var(--line-strong);
+    border-bottom:1px solid var(--line-strong);
+  }
+  .diagram-frame iframe{
+    display:block;width:100%;height:820px;border:0;border-radius:10px;
+    background:#f4f5f7;box-shadow:0 1px 3px rgba(32,20,48,.08);
+  }
+  .diagram-caption{font-size:12.5px;color:var(--slate);margin:12px 0 0;}
+  .diagram-caption a{font-weight:600;text-decoration:none;}
+  .diagram-caption a:hover{text-decoration:underline;}
+  @media (max-width:760px){
+    .diagram-frame{margin:16px -20px 6px;padding:12px 20px;}
+    .diagram-frame iframe{height:460px;}
+  }
+
+  .callout{
+    margin:20px 0 4px;padding:15px 18px;
+    border-left:4px solid var(--accenture);border-radius:8px;
+    background:#F8F2FD;font-size:14px;color:var(--ink);
+  }
+  .callout strong{color:var(--vertex);}
+
+  .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px;margin:16px 0 6px;}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:42rem;}
+  th, td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top;}
+  th{background:var(--vertex);color:#FFFFFF;font-weight:600;font-family:var(--body-font);}
+  tr:last-child td{border-bottom:0;}
+  tr:nth-child(even) td{background:var(--panel);}
+  tbody tr:hover td{background:#E7DAF3;}
+  .fr-id{font-family:var(--mono);font-weight:600;color:var(--vertex);white-space:nowrap;}
+  .fr-id::before{content:"[";color:var(--accenture);}
+  .fr-id::after{content:"]";color:var(--accenture);}
+  .footnote{font-size:12.5px;color:var(--slate);margin-top:14px;}
+
+  .badge{
+    display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;
+    padding:3px 9px;border-radius:12px;background:#EEE1F9;color:var(--vertex);margin-bottom:10px;
+  }
+  .badge.future{background:#2a1140;color:#D9B8FF;}
+  .roadmap-card{background:#FFFFFF;border:1px solid var(--line);border-top:3px solid var(--accenture);border-radius:10px;padding:18px 18px 20px;}
+  .roadmap-card strong{display:block;font-family:var(--display);font-size:16px;color:var(--ink);margin:0 0 7px;}
+  .roadmap-card p{margin:0;font-size:13.5px;color:var(--slate);}
+
+  /* ---------- Hero card ---------- */
+  .hero{
+    padding:40px 40px 34px;border-radius:14px;
+    background:linear-gradient(135deg,#2a1140 0%,var(--vertex) 62%,#5c2b89 100%);
+    color:#F6F1FB;overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} .hero-artifact{order:-1;} }
+  .hero .eyebrow{
+    font-family:var(--mono);color:#D9B8FF;text-transform:uppercase;letter-spacing:.1em;
+    font-size:11.5px;font-weight:500;margin:0 0 14px;
+  }
+  .hero h1{font-family:var(--display);margin:0 0 14px;font-size:35px;line-height:1.2;font-weight:600;letter-spacing:-.01em;}
+  .hero .hero-lede{margin:0;max-width:480px;font-size:15.5px;color:#E4D7F3;}
+
+  .hero-artifact{display:flex;flex-direction:column;gap:12px;}
+  .email-card{background:#FFFFFF;border-radius:10px;color:var(--ink);box-shadow:0 16px 36px rgba(20,6,38,.35);overflow:hidden;}
+  .email-chrome{display:flex;align-items:center;gap:6px;padding:9px 13px;background:var(--panel);border-bottom:1px solid var(--line);}
+  .email-chrome span{width:8px;height:8px;border-radius:50%;background:#D7C6E8;}
+  .email-chrome-label{margin-left:8px;font-family:var(--mono);font-size:10.5px;color:var(--slate);letter-spacing:.03em;}
+  .email-meta{padding:11px 15px 0;font-size:12px;color:var(--slate);}
+  .email-meta b{color:var(--ink);}
+  .email-subject{padding:7px 15px 0;font-weight:600;font-size:14px;color:var(--ink);}
+  .email-body{padding:9px 15px 15px;font-size:13px;color:#4a4553;line-height:1.55;}
+  .reftag-inline{font-family:var(--mono);font-weight:600;color:var(--vertex);background:#EEE1F9;padding:1px 5px;border-radius:3px;}
+  .email-result{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:13px 15px;}
+  .result-row{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;color:#F1E7FB;padding:4px 0;}
+  .result-row .dot{width:6px;height:6px;border-radius:50%;background:#B9FF6E;flex:none;}
+  .result-row code{font-family:var(--mono);color:#F6F1FB;background:rgba(255,255,255,.12);padding:0 4px;border-radius:3px;}
+
+  /* ---------- Footer ---------- */
+  .doc-footer{
+    margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    font-size:12px;color:var(--slate);flex-wrap:wrap;
+  }
+
+  @media (max-width:760px){
+    main{padding:22px 18px 48px;}
+    section{padding:22px 20px;}
+    .hero{padding:26px 22px 24px;}
+    .hero h1{font-size:26px;}
+  }
+
+  @media print{
+    .layout{display:block;}
+    .rail{position:static;height:auto;}
+    section.reveal{opacity:1;transform:none;}
+    .chapter-num{opacity:.08;}
+    .diagram-frame iframe{height:760px;}
+    th{background:var(--vertex) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .hero{background:var(--vertex) !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    section{break-inside:avoid-page;}
+    tr{break-inside:avoid;}
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="rail">
+    <div class="rail-brand">
+      <div class="rail-mark accenture"><span class="chevron">&gt;</span>accenture</div>
+      <div class="rail-mark vertex"><span class="triangle"></span><span class="word">VERTEX <b>PHARMACEUTICALS</b></span></div>
+      <p class="rail-eyebrow">Phase 1 solution walkthrough</p>
+      <p class="rail-title">IP Correspondence Automation Agent</p>
+    </div>
+
+    <nav class="rail-nav">
+      <a href="#overview"><span class="navnum">00</span>Overview</a>
+      <a href="#business-flow"><span class="navnum">01</span>Business Process</a>
+      <a href="#technical-flow"><span class="navnum">02</span>Technical Flow</a>
+      <a href="#requirements"><span class="navnum">03</span>Requirements</a>
+      <a href="#exceptions"><span class="navnum">04</span>Exceptions</a>
+      <a href="#roadmap"><span class="navnum">05</span>Roadmap</a>
+    </nav>
+
+    <div class="rail-card">
+      <strong>Companion documents</strong>
+      Vertex IP FDD (functional requirements &amp; business rules) · Vertex IP TDD (technical design)
+    </div>
+    <div class="rail-card">
+      <strong>Prepared by</strong>
+      Accenture / Avanade for Vertex Pharmaceuticals<br>Hai Nguyen · October 2026
+    </div>
+  </aside>
+
+  <main>
+
+    <header class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Accenture for Vertex Pharmaceuticals — Phase 1 Solution Walkthrough</p>
+          <h1>The reference number is the key.<br>Phase 1 teaches the mailbox to read it instantly.</h1>
+          <p class="hero-lede">A walkthrough of the business problem, the automated process, the technical implementation, and the nine functional requirements being signed off for Phase 1.</p>
+        </div>
+        <div class="hero-artifact">
+          <div class="email-card">
+            <div class="email-chrome"><span></span><span></span><span></span><div class="email-chrome-label">Vertex IP Correspondence — Inbox</div></div>
+            <div class="email-meta"><b>From:</b> outside.counsel@sem-law.com</div>
+            <div class="email-subject">RE: Patent Family — <span class="reftag-inline">SEM-24-783</span></div>
+            <div class="email-body">Attached is the latest office action correspondence relating to <span class="reftag-inline">SEM-24-783</span>. Please confirm receipt and file accordingly.</div>
+          </div>
+          <div class="email-result">
+            <div class="result-row"><span class="dot"></span>Reference identified &amp; normalized</div>
+            <div class="result-row"><span class="dot"></span>Folder rule validated — prefix + 2 segments</div>
+            <div class="result-row"><span class="dot"></span>Filed to <code>/SEM-24-783/</code> automatically</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="overview" class="reveal">
+      <span class="chapter-num" aria-hidden="true">00</span>
+      <span class="ref-tag">00-OVERVIEW</span>
+      <h2>Business Overview &amp; Problem Statement</h2>
+      <p class="lede">Today, Vertex IP Operations manually reviews every incoming email, identifies the patent family reference, locates (or creates) the matching folder, moves the email, and tracks exceptions. This consumes significant operational effort and relies heavily on individual knowledge of folder structures and reference formats.</p>
+
+      <div class="grid-2">
+        <div class="card card-before">
+          <h4>Today — manual effort</h4>
+          <ul>
+            <li>Review incoming emails one by one</li>
+            <li>Identify patent family references by eye</li>
+            <li>Search for the matching family folder</li>
+            <li>Create folders when none exists</li>
+            <li>Move emails to the right location</li>
+            <li>Track and explain filing exceptions</li>
+          </ul>
+        </div>
+        <div class="card card-after">
+          <h4>Phase 1 — automated solution</h4>
+          <ul>
+            <li>Agent reads every new email automatically</li>
+            <li>Reference identified from subject, body, or quoted thread</li>
+            <li>Reference validated against folder-naming rules</li>
+            <li>Folder found or created, email filed automatically</li>
+            <li>Every action logged for audit</li>
+            <li>One daily report to business owners — new folders &amp; exceptions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="business-flow" class="reveal">
+      <span class="chapter-num" aria-hidden="true">01</span>
+      <span class="ref-tag">01-PROCESS</span>
+      <h2>High-Level Business Process Flow</h2>
+      <p class="lede">The agent reads every new email, scans for a reference number, validates the folder-naming rule, and either files the email or raises a documented exception — then sends one consolidated report to business owners at the end of the day.</p>
+      <div class="diagram-frame">
+        <iframe src=".archify/architecture-vertex-email-rules-20261007-181400/vertex-email-rules.html?theme=light" title="High-level business process flow diagram (interactive)" loading="lazy"></iframe>
+      </div>
+      <p class="diagram-caption">Vertex Email Rules Agent — business process flow. Interactive: use the Live/Still toggle inside the diagram to play the trace animation. <a href=".archify/architecture-vertex-email-rules-20261007-181400/vertex-email-rules.html" target="_blank" rel="noopener">Open full-screen ↗</a></p>
+    </section>
+
+    <section id="technical-flow" class="reveal">
+      <span class="chapter-num" aria-hidden="true">02</span>
+      <span class="ref-tag">02-TECHNICAL</span>
+      <h2>Technical Implementation Flow</h2>
+      <p class="lede">Phase 1 is implemented on four coordinated components: Outlook + Power Automate for ingestion and filing, Azure OpenAI (via Azure AI Foundry) for reference extraction, a deterministic Power Automate validator for folder-naming rules, and Dataverse for the activity/exception log that feeds a second, independent daily-report flow.</p>
+      <div class="diagram-frame">
+        <iframe src=".archify/workflow-vertex-technical-implementation-20261008-092901/vertex-technical-implementation.html?theme=light" title="Technical implementation workflow diagram (interactive)" loading="lazy"></iframe>
+      </div>
+      <p class="diagram-caption">Technical implementation workflow — full detail in the Vertex IP Technical Design Document (TDD). Interactive: use the Live/Still toggle inside the diagram to play the trace animation. <a href=".archify/workflow-vertex-technical-implementation-20261008-092901/vertex-technical-implementation.html" target="_blank" rel="noopener">Open full-screen ↗</a></p>
+
+      <div class="callout"><strong>By design:</strong> Azure OpenAI never branches or decides. It always returns structured JSON only — Power Automate owns the found/not-found and valid/invalid decisions, deterministically.</div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4>Agent: Instructions + Skill (Azure OpenAI via Foundry)</h4>
+          <ul>
+            <li><strong>Instructions</strong> — system prompt encodes Ref # lead-in phrases and known matter prefixes</li>
+            <li><strong>Skill</strong> — trainable, extensible component that identifies and maps the Ref #; business can add new mapping rules without rewriting instructions</li>
+            <li><strong>Output</strong> — always structured JSON only (reference, is_vertex, segments, normalized_value, confidence) — no agent-side decisioning</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Folder Rule Validator (deterministic, Power Automate)</h4>
+          <ul>
+            <li>Condition/Switch action — not a model call</li>
+            <li>Vertex reference: exactly 2 segments (e.g. 00-113)</li>
+            <li>Non-Vertex reference: prefix + 2 segments (e.g. SEM-24-783)</li>
+            <li>Invalid format → exception, no auto-filing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="requirements" class="reveal">
+      <span class="chapter-num" aria-hidden="true">03</span>
+      <span class="ref-tag">03-SIGNOFF</span>
+      <h2>Functional Requirements (FR-1 – FR-9)</h2>
+      <p class="lede">Nine consolidated requirement areas, each traceable to the detailed functional design and the solution architecture — the basis for client review and sign-off.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th style="width:90px;">ID</th><th>Requirement Area</th><th>Summary</th></tr></thead>
+          <tbody>
+            <tr><td class="fr-id">FR-1</td><td>Email Ingestion</td><td>Monitor the shared mailbox; read every new email, reply, and acknowledgement within minutes of receipt.</td></tr>
+            <tr><td class="fr-id">FR-2</td><td>Reference (Ref #) Identification</td><td>Scan subject first, then body, then quoted history; recognize common lead-in phrases and known matter prefixes.</td></tr>
+            <tr><td class="fr-id">FR-3</td><td>Reference Normalization</td><td>Standardize detected references — uppercase, separators, country codes, subcase suffixes, spacing.</td></tr>
+            <tr><td class="fr-id">FR-4</td><td>Folder Rule Validation</td><td>Vertex references require exactly 2 segments; non-Vertex references require prefix + 2 segments. Failures raise an Invalid Format exception.</td></tr>
+            <tr><td class="fr-id">FR-5</td><td>Folder Management</td><td>Search for a matching folder; move the email if found, create a new folder if not — every creation is audited.</td></tr>
+            <tr><td class="fr-id">FR-6</td><td>Automated Filing Rules</td><td>Single valid family → auto-file; folder located → move; folder missing → create, move, and record.</td></tr>
+            <tr><td class="fr-id">FR-7</td><td>Exception Handling</td><td>No reference, multiple references, subject/body conflicts, invalid format, or attachment-only references all route to manual review with a documented reason.</td></tr>
+            <tr><td class="fr-id">FR-8</td><td>Audit Logging</td><td>Every processed email generates an audit entry — message ID, sender, subject, reference, folder, result, timestamp, exception type.</td></tr>
+            <tr><td class="fr-id">FR-9</td><td>Daily Reporting</td><td>One daily report to business owners — executive summary, new folders, filing activity, exceptions, and normalization activity.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="footnote">Full requirement-level detail (FR-1.1 through FR-9.6) is in the Vertex IP FDD, Section 5 — Functional Requirements, and in <code>Vertex IP FDD - Functional Requirements.md</code>.</p>
+    </section>
+
+    <section id="exceptions" class="reveal">
+      <span class="chapter-num" aria-hidden="true">04</span>
+      <span class="ref-tag">04-EXCEPTIONS</span>
+      <h2>Exception Handling Rules</h2>
+      <p class="lede">Every scenario the agent cannot resolve automatically is documented, left untouched for manual review, and included in the daily report — the agent never guesses.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th style="width:170px;">Exception</th><th>Condition</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>No Reference Found</td><td>No valid reference detected anywhere in the email</td><td>Leave in Inbox, add to exception queue, include in daily report</td></tr>
+            <tr><td>Multiple Family References</td><td>More than one valid reference detected</td><td>No auto-filing; route for manual review</td></tr>
+            <tr><td>Subject/Body Conflict</td><td>Different references in subject vs. body</td><td>Do not prioritize automatically; route for manual review</td></tr>
+            <tr><td>Conflicting Quoted History</td><td>Latest vs. older quoted references disagree</td><td>Create exception; require manual review</td></tr>
+            <tr><td>Invalid Format</td><td>Reference fails Folder Rule Validation</td><td>Leave untouched, log Invalid Format exception, route for review, include in report</td></tr>
+            <tr><td>Attachment Only</td><td>Reference appears only inside an attachment</td><td>Not processed in Phase 1; create exception (OCR is out of scope)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="roadmap" class="reveal">
+      <span class="chapter-num" aria-hidden="true">05</span>
+      <span class="ref-tag">05-ROADMAP</span>
+      <h2>Future Phase Roadmap</h2>
+      <p class="lede">Phase 1 already uses Azure OpenAI (via Foundry) for reference extraction. The items below are additional, not-yet-scoped enhancements for future phases.</p>
+      <div class="grid-3">
+        <div class="roadmap-card">
+          <span class="badge future">Future</span>
+          <strong>Attachment Processing</strong>
+          <p>OCR and PDF parsing so references found only inside attachments can be identified and filed automatically.</p>
+        </div>
+        <div class="roadmap-card">
+          <span class="badge future">Future</span>
+          <strong>Copilot Studio Agent</strong>
+          <p>A conversational agent so business users can ask things like &ldquo;Show all correspondence for SEM-26-788&rdquo; or &ldquo;What folders were created today?&rdquo;</p>
+        </div>
+        <div class="roadmap-card">
+          <span class="badge future">Future</span>
+          <strong>Power BI Dashboard</strong>
+          <p>Operational KPIs — processing volume, automation success rate, open exceptions, top active patent families, trend analysis.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="doc-footer">
+      <span>Vertex IP Correspondence Automation Agent · Prepared for Vertex Pharmaceuticals by Accenture / Avanade</span>
+      <span>Hai Nguyen · October 2026</span>
+    </div>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('.rail-nav a');
+  var sections = document.querySelectorAll('main section[id]');
+  if(!links.length || !sections.length || !('IntersectionObserver' in window)) return;
+  var byId = {};
+  links.forEach(function(a){ byId[a.getAttribute('href').slice(1)] = a; });
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var link = byId[entry.target.id];
+      if(!link) return;
+      if(entry.isIntersecting){
+        links.forEach(function(a){ a.classList.remove('active'); });
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+  sections.forEach(function(s){ spy.observe(s); });
+
+  var revealSections = document.querySelectorAll('main section.reveal');
+  if(revealSections.length){
+    var reveal = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    revealSections.forEach(function(s){ reveal.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
