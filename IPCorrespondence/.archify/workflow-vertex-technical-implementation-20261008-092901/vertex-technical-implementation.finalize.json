@@ -5,16 +5,16 @@
   "status": "pass",
   "type": "workflow",
   "quality": "showcase",
-  "startedAt": "2026-10-13T17:08:21.947Z",
+  "startedAt": "2026-10-13T19:26:45.106Z",
   "specification": {
-    "path": "C:\\Temp\\archify-tdd-fix\\candidate.json",
-    "sha256": "655b76755e6a69810f7c59c7ed7788733879ccefc0217525ee982e542cd4957a",
+    "path": "C:\\Temp\\archify-tdd-fix2\\candidate.json",
+    "sha256": "6415de14977b30fd9186d5bb8bee57d3e6cdbf917114caa7ba1bf186b504ba77",
     "bytes": 7555
   },
   "artifact": {
-    "path": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
-    "sha256": "3ddb631c8d9154b42b0fe36ed86dd30a88d47eb7649480b04828eabdfb5c2e7e",
-    "bytes": 770861
+    "path": "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.html",
+    "sha256": "c5ede0626a4ba2000b3b46d22780da2452a8f1d77b3ac2371f8e5f91137b6ec2",
+    "bytes": 770773
   },
   "stages": {
     "validate": {
@@ -27,8 +27,8 @@
         "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
         "deliver",
         "workflow",
-        "C:\\Temp\\archify-tdd-fix\\candidate.json",
-        "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
+        "C:\\Temp\\archify-tdd-fix2\\candidate.json",
+        "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.html",
         "--quality",
         "showcase",
         "--json"
@@ -38,7 +38,7 @@
         "ok": true,
         "command": "validate",
         "specification": {
-          "sha256": "655b76755e6a69810f7c59c7ed7788733879ccefc0217525ee982e542cd4957a",
+          "sha256": "6415de14977b30fd9186d5bb8bee57d3e6cdbf917114caa7ba1bf186b504ba77",
           "bytes": 7555
         },
         "validation": {
@@ -54,33 +54,33 @@
     "deliver": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 3413,
+      "durationMs": 4784,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
         "deliver",
         "workflow",
-        "C:\\Temp\\archify-tdd-fix\\candidate.json",
-        "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
+        "C:\\Temp\\archify-tdd-fix2\\candidate.json",
+        "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.html",
         "--quality",
         "showcase",
         "--json"
       ],
       "receipt": {
         "schemaVersion": 1,
-        "receiptId": "63896e2c-a986-42eb-9216-acb499911edd",
+        "receiptId": "4b977eb5-117a-4b83-a87c-241692de673c",
         "ok": true,
         "command": "deliver",
         "type": "workflow",
-        "input": "C:\\Temp\\archify-tdd-fix\\candidate.json",
-        "output": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
+        "input": "C:\\Temp\\archify-tdd-fix2\\candidate.json",
+        "output": "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.html",
         "specification": {
-          "sha256": "655b76755e6a69810f7c59c7ed7788733879ccefc0217525ee982e542cd4957a",
+          "sha256": "6415de14977b30fd9186d5bb8bee57d3e6cdbf917114caa7ba1bf186b504ba77",
           "bytes": 7555
         },
         "artifact": {
-          "sha256": "3ddb631c8d9154b42b0fe36ed86dd30a88d47eb7649480b04828eabdfb5c2e7e",
-          "bytes": 770861
+          "sha256": "c5ede0626a4ba2000b3b46d22780da2452a8f1d77b3ac2371f8e5f91137b6ec2",
+          "bytes": 770773
         },
         "validation": {
           "checksPassed": 9,
@@ -106,20 +106,20 @@
     "check": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 1695,
+      "durationMs": 1611,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
         "check",
-        "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
+        "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.html",
         "--require-provenance"
       ],
       "receipt": {
         "ok": true,
-        "file": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
+        "file": "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.html",
         "artifact": {
-          "sha256": "3ddb631c8d9154b42b0fe36ed86dd30a88d47eb7649480b04828eabdfb5c2e7e",
-          "bytes": 770861
+          "sha256": "c5ede0626a4ba2000b3b46d22780da2452a8f1d77b3ac2371f8e5f91137b6ec2",
+          "bytes": 770773
         },
         "checks": [
           {
@@ -186,16 +186,16 @@
             "containerBorderRuns": 0,
             "labelRouteClearanceIssues": 0,
             "labelCanvasOverflowIssues": 0,
-            "minLabelRouteClearance": 36.6,
+            "minLabelRouteClearance": 40.6,
             "desktopReadabilityIssues": 0,
             "viewportHeightIssues": 0,
-            "minProjectedNodeTextPx": 6.189683860232945,
+            "minProjectedNodeTextPx": 6.078431372549019,
             "maxBends": 2,
             "routesOverSuggestedBends": 0,
-            "maxStretch": 1.063,
+            "maxStretch": 1.06,
             "routesOverSuggestedStretch": 0,
             "minSegmentPx": 28,
-            "minInteriorSegmentPx": 766.5,
+            "minInteriorSegmentPx": 804,
             "shortSegmentCount": 0,
             "shortEndpointSegmentCount": 0,
             "shortInteriorSegmentCount": 0,
@@ -230,24 +230,24 @@
               "id": "new_email"
             },
             "minimumSourceTextPx": 8,
-            "minimumProjectedTextPx": 6.189683860232945,
+            "minimumProjectedTextPx": 6.078431372549019,
             "semanticTextCount": 34
           },
           "issues": []
         },
         "provenance": "current",
-        "deliveryReceiptId": "63896e2c-a986-42eb-9216-acb499911edd"
+        "deliveryReceiptId": "4b977eb5-117a-4b83-a87c-241692de673c"
       }
     },
     "browser-check": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 3570,
+      "durationMs": 4790,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
         "browser-check",
-        "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
+        "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.html",
         "--json",
         "--require-provenance"
       ],
@@ -260,11 +260,11 @@
         "status": "pass",
         "visualReview": "not-requested",
         "provenance": "current",
-        "deliveryReceiptId": "63896e2c-a986-42eb-9216-acb499911edd",
+        "deliveryReceiptId": "4b977eb5-117a-4b83-a87c-241692de673c",
         "artifact": {
-          "path": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
-          "sha256": "3ddb631c8d9154b42b0fe36ed86dd30a88d47eb7649480b04828eabdfb5c2e7e",
-          "bytes": 770861
+          "path": "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.html",
+          "sha256": "c5ede0626a4ba2000b3b46d22780da2452a8f1d77b3ac2371f8e5f91137b6ec2",
+          "bytes": 770773
         },
         "state": {
           "detail": "read",
@@ -295,8 +295,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1342,
-              "diagramWidth": 1312,
+              "readerWidth": 1366,
+              "diagramWidth": 1336,
               "pageComposition": {
                 "bodyPaddingPx": 12,
                 "headerPx": 78,
@@ -305,7 +305,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -400,8 +400,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1404,
-              "diagramWidth": 1374,
+              "readerWidth": 1429,
+              "diagramWidth": 1399,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -410,7 +410,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -505,8 +505,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1549,
-              "diagramWidth": 1519,
+              "readerWidth": 1577,
+              "diagramWidth": 1547,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -515,7 +515,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -616,15 +616,15 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 94,
                 "diagramChromePx": 94,
-                "svgPx": 1027,
+                "svgPx": 1008,
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
@@ -633,36 +633,36 @@
                     "validate_gate",
                     "file_email"
                   ],
-                  "nodeSpanPx": 106,
-                  "spaceAboveNodesPx": 53,
+                  "nodeSpanPx": 104,
+                  "spaceAboveNodesPx": 52,
                   "spaceBelowNodesPx": 6
                 },
                 {
                   "frameId": "lane-1",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 1,
                   "nodeIds": [
                     "agent_call"
                   ],
-                  "nodeSpanPx": 106,
-                  "spaceAboveNodesPx": 53,
+                  "nodeSpanPx": 104,
+                  "spaceAboveNodesPx": 52,
                   "spaceBelowNodesPx": 6
                 },
                 {
                   "frameId": "lane-2",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 2,
                   "nodeIds": [
                     "log_exception",
                     "activity_log"
                   ],
-                  "nodeSpanPx": 81,
-                  "spaceAboveNodesPx": 65,
-                  "spaceBelowNodesPx": 19
+                  "nodeSpanPx": 79,
+                  "spaceAboveNodesPx": 64,
+                  "spaceBelowNodesPx": 18
                 },
                 {
                   "frameId": "lane-3",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 5,
                   "nodeIds": [
                     "daily_timer",
@@ -671,9 +671,9 @@
                     "send_report",
                     "business_owners"
                   ],
-                  "nodeSpanPx": 81,
-                  "spaceAboveNodesPx": 65,
-                  "spaceBelowNodesPx": 19
+                  "nodeSpanPx": 79,
+                  "spaceAboveNodesPx": 64,
+                  "spaceBelowNodesPx": 18
                 }
               ],
               "minimumProjectedNodeTextPx": 8,
@@ -768,8 +768,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1342,
-              "diagramWidth": 1312,
+              "readerWidth": 1366,
+              "diagramWidth": 1336,
               "pageComposition": {
                 "bodyPaddingPx": 12,
                 "headerPx": 78,
@@ -778,7 +778,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -873,8 +873,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1404,
-              "diagramWidth": 1374,
+              "readerWidth": 1429,
+              "diagramWidth": 1399,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -883,7 +883,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -978,8 +978,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1549,
-              "diagramWidth": 1519,
+              "readerWidth": 1577,
+              "diagramWidth": 1547,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -988,7 +988,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -1089,15 +1089,15 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 94,
                 "diagramChromePx": 94,
-                "svgPx": 1027,
+                "svgPx": 1008,
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
@@ -1106,36 +1106,36 @@
                     "validate_gate",
                     "file_email"
                   ],
-                  "nodeSpanPx": 106,
-                  "spaceAboveNodesPx": 53,
+                  "nodeSpanPx": 104,
+                  "spaceAboveNodesPx": 52,
                   "spaceBelowNodesPx": 6
                 },
                 {
                   "frameId": "lane-1",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 1,
                   "nodeIds": [
                     "agent_call"
                   ],
-                  "nodeSpanPx": 106,
-                  "spaceAboveNodesPx": 53,
+                  "nodeSpanPx": 104,
+                  "spaceAboveNodesPx": 52,
                   "spaceBelowNodesPx": 6
                 },
                 {
                   "frameId": "lane-2",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 2,
                   "nodeIds": [
                     "log_exception",
                     "activity_log"
                   ],
-                  "nodeSpanPx": 81,
-                  "spaceAboveNodesPx": 65,
-                  "spaceBelowNodesPx": 19
+                  "nodeSpanPx": 79,
+                  "spaceAboveNodesPx": 64,
+                  "spaceBelowNodesPx": 18
                 },
                 {
                   "frameId": "lane-3",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 5,
                   "nodeIds": [
                     "daily_timer",
@@ -1144,9 +1144,9 @@
                     "send_report",
                     "business_owners"
                   ],
-                  "nodeSpanPx": 81,
-                  "spaceAboveNodesPx": 65,
-                  "spaceBelowNodesPx": 19
+                  "nodeSpanPx": 79,
+                  "spaceAboveNodesPx": 64,
+                  "spaceBelowNodesPx": 18
                 }
               ],
               "minimumProjectedNodeTextPx": 8,
@@ -1193,8 +1193,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1342,
-              "diagramWidth": 1312,
+              "readerWidth": 1366,
+              "diagramWidth": 1336,
               "pageComposition": {
                 "bodyPaddingPx": 12,
                 "headerPx": 78,
@@ -1203,7 +1203,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -1298,8 +1298,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1404,
-              "diagramWidth": 1374,
+              "readerWidth": 1429,
+              "diagramWidth": 1399,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -1308,7 +1308,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -1403,8 +1403,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1549,
-              "diagramWidth": 1519,
+              "readerWidth": 1577,
+              "diagramWidth": 1547,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -1413,7 +1413,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -1514,15 +1514,15 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 94,
                 "diagramChromePx": 94,
-                "svgPx": 1027,
+                "svgPx": 1008,
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1202,
+              "viewBoxWidth": 1224,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
@@ -1531,36 +1531,36 @@
                     "validate_gate",
                     "file_email"
                   ],
-                  "nodeSpanPx": 106,
-                  "spaceAboveNodesPx": 53,
+                  "nodeSpanPx": 104,
+                  "spaceAboveNodesPx": 52,
                   "spaceBelowNodesPx": 6
                 },
                 {
                   "frameId": "lane-1",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 1,
                   "nodeIds": [
                     "agent_call"
                   ],
-                  "nodeSpanPx": 106,
-                  "spaceAboveNodesPx": 53,
+                  "nodeSpanPx": 104,
+                  "spaceAboveNodesPx": 52,
                   "spaceBelowNodesPx": 6
                 },
                 {
                   "frameId": "lane-2",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 2,
                   "nodeIds": [
                     "log_exception",
                     "activity_log"
                   ],
-                  "nodeSpanPx": 81,
-                  "spaceAboveNodesPx": 65,
-                  "spaceBelowNodesPx": 19
+                  "nodeSpanPx": 79,
+                  "spaceAboveNodesPx": 64,
+                  "spaceBelowNodesPx": 18
                 },
                 {
                   "frameId": "lane-3",
-                  "heightPx": 165,
+                  "heightPx": 162,
                   "nodeCount": 5,
                   "nodeIds": [
                     "daily_timer",
@@ -1569,9 +1569,9 @@
                     "send_report",
                     "business_owners"
                   ],
-                  "nodeSpanPx": 81,
-                  "spaceAboveNodesPx": 65,
-                  "spaceBelowNodesPx": 19
+                  "nodeSpanPx": 79,
+                  "spaceAboveNodesPx": 64,
+                  "spaceBelowNodesPx": 18
                 }
               ],
               "minimumProjectedNodeTextPx": 8,
@@ -1613,13 +1613,13 @@
   },
   "diagnostics": [],
   "evidence": {
-    "receipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.finalize.json",
-    "summaryReceipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.finalize-summary.json",
-    "browserCheckReceipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.browser-check.json"
+    "receipt": "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.finalize.json",
+    "summaryReceipt": "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.browser-check.json"
   },
   "visualReview": "not-requested",
-  "finishedAt": "2026-10-13T17:08:32.232Z",
-  "durationMs": 10284,
+  "finishedAt": "2026-10-13T19:26:58.210Z",
+  "durationMs": 13103,
   "update": {
     "status": "current",
     "installedVersion": "3.0.1",

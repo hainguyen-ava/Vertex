@@ -4988,7 +4988,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
     <!-- Main Diagram -->
     <div class="diagram-container" data-detail-level="read"
          data-preset-badge-editorial-plate="ARCHIFY / PLATE 04">
-      <svg viewBox="0 0 1202 660" data-layout-contract="readable-v2" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase">
+      <svg viewBox="0 0 1224 660" data-layout-contract="readable-v2" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase">
         <title id="archify-diagram-title">Vertex IP Correspondence Automation — Technical Implementation</title>
         <desc id="archify-diagram-description">Outlook + Power Automate + Azure OpenAI (via Foundry) + Dataverse</desc>
         <!-- Definitions -->
@@ -5014,16 +5014,16 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Swimlanes -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="1146" height="106" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="1168" height="106" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="74" class="t-dim" font-size="10" font-weight="600">01 / Outlook + Power Automate (Email Flow)</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="178" width="1146" height="106" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="178" width="1168" height="106" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="200" class="t-dim" font-size="10" font-weight="600">02 / Azure OpenAI (via Foundry)</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="304" width="1146" height="106" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="304" width="1168" height="106" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="326" class="t-dim" font-size="10" font-weight="600">03 / Exception Handling + Dataverse Log</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-3" x="40" y="430" width="1146" height="106" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-3" x="40" y="430" width="1168" height="106" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="452" class="t-dim" font-size="10" font-weight="600">04 / Power Automate (Daily Report) + Business Owners</text>
 
         <!-- Phase headers -->
@@ -5033,210 +5033,210 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 
 
         <!-- Edge paths -->
-        <path data-edge-from="agent_call" data-edge-to="parse_decision" data-edge-label="JSON result" data-edge-key="0" data-edge-id="call-to-parse" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="336,212;336,120;444,120" d="M 336 212 L 336 120 L 444 120" class="a-emphasis" data-animate="edge" style="--step:1" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="compose_report" data-edge-to="send_report" data-edge-key="1" data-edge-id="compose-to-send" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="599,498;655.2,498" d="M 599 498 L 655.2 498" class="a-emphasis" data-animate="edge" style="--step:8" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="new_email" data-edge-to="agent_call" data-edge-key="2" data-edge-id="email-to-call" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="215.5,120;312,120;312,212" d="M 215.5 120 L 312 120 L 312 212" class="a-emphasis" data-animate="edge" style="--step:0" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="log_exception" data-edge-to="activity_log" data-edge-label="logged" data-edge-key="3" data-edge-id="exception-to-log" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="980.7,372;1027.5,372" d="M 980.7 372 L 1027.5 372" class="a-dashed" data-animate="edge" style="--step:10" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <path data-edge-from="file_email" data-edge-to="activity_log" data-edge-label="filed" data-edge-key="4" data-edge-id="file-to-log" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="1102.5,146;1102.5,346" d="M 1102.5 146 L 1102.5 346" class="a-emphasis" data-animate="edge" style="--step:5" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="activity_log" data-edge-to="query_log" data-edge-label="read day&#39;s activity" data-edge-key="5" data-edge-id="log-to-query" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="1102.5,398;1102.5,552;336,552;336,524" d="M 1102.5 398 L 1102.5 552 L 336 552 L 336 524" class="a-dashed" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <path data-edge-from="normalize_ref" data-edge-to="validate_gate" data-edge-key="6" data-edge-id="normalize-to-validate" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="805.2,120;835.7,120" d="M 805.2 120 L 835.7 120" class="a-emphasis" data-animate="edge" style="--step:3" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="parse_decision" data-edge-to="log_exception" data-edge-label="not found" data-edge-key="7" data-edge-id="parse-to-exception" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="519,154;519,372;835.7,372" d="M 519 154 L 519 372 L 835.7 372" class="a-dashed" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <path data-edge-from="parse_decision" data-edge-to="normalize_ref" data-edge-label="ref found" data-edge-key="8" data-edge-id="parse-to-validate" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="594,120;655.2,120" d="M 594 120 L 655.2 120" class="a-emphasis" data-animate="edge" style="--step:2" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="query_log" data-edge-to="compose_report" data-edge-key="9" data-edge-id="query-to-compose" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="411,498;439,498" d="M 411 498 L 439 498" class="a-emphasis" data-animate="edge" style="--step:12" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="agent_call" data-edge-to="parse_decision" data-edge-label="JSON result" data-edge-key="0" data-edge-id="call-to-parse" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="316,212;316,120;424,120" d="M 316 212 L 316 120 L 424 120" class="a-emphasis" data-animate="edge" style="--step:1" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="compose_report" data-edge-to="send_report" data-edge-key="1" data-edge-id="compose-to-send" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="584,498;645.2,498" d="M 584 498 L 645.2 498" class="a-emphasis" data-animate="edge" style="--step:8" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="new_email" data-edge-to="agent_call" data-edge-key="2" data-edge-id="email-to-call" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="208,120;292,120;292,212" d="M 208 120 L 292 120 L 292 212" class="a-emphasis" data-animate="edge" style="--step:0" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="log_exception" data-edge-to="activity_log" data-edge-label="logged" data-edge-key="3" data-edge-id="exception-to-log" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="993.2,372;1040,372" d="M 993.2 372 L 1040 372" class="a-dashed" data-animate="edge" style="--step:10" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="file_email" data-edge-to="activity_log" data-edge-label="filed" data-edge-key="4" data-edge-id="file-to-log" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="1120,146;1120,346" d="M 1120 146 L 1120 346" class="a-emphasis" data-animate="edge" style="--step:5" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="activity_log" data-edge-to="query_log" data-edge-label="read day&#39;s activity" data-edge-key="5" data-edge-id="log-to-query" data-composition-routing="workflow-v2-auto" data-edge-role="return" data-composition-points="1120,398;1120,552;316,552;316,524" d="M 1120 398 L 1120 552 L 316 552 L 316 524" class="a-dashed" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="normalize_ref" data-edge-to="validate_gate" data-edge-key="6" data-edge-id="normalize-to-validate" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="805.2,120;833.2,120" d="M 805.2 120 L 833.2 120" class="a-emphasis" data-animate="edge" style="--step:3" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="parse_decision" data-edge-to="log_exception" data-edge-label="not found" data-edge-key="7" data-edge-id="parse-to-exception" data-composition-routing="workflow-v2-auto" data-edge-role="branch" data-composition-points="504,154;504,372;833.2,372" d="M 504 154 L 504 372 L 833.2 372" class="a-dashed" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="parse_decision" data-edge-to="normalize_ref" data-edge-label="ref found" data-edge-key="8" data-edge-id="parse-to-validate" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="584,120;645.2,120" d="M 584 120 L 645.2 120" class="a-emphasis" data-animate="edge" style="--step:2" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="query_log" data-edge-to="compose_report" data-edge-key="9" data-edge-id="query-to-compose" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="396,498;424,498" d="M 396 498 L 424 498" class="a-emphasis" data-animate="edge" style="--step:12" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         <path data-edge-from="send_report" data-edge-to="business_owners" data-edge-key="10" data-edge-id="send-to-owners" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="805.2,498;833.2,498" d="M 805.2 498 L 833.2 498" class="a-emphasis" data-animate="edge" style="--step:12" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="daily_timer" data-edge-to="query_log" data-edge-key="11" data-edge-id="timer-to-query" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="233,498;261,498" d="M 233 498 L 261 498" class="a-emphasis" data-animate="edge" style="--step:12" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="validate_gate" data-edge-to="log_exception" data-edge-label="invalid" data-edge-key="12" data-edge-id="validate-to-exception" data-composition-routing="workflow-v2-auto" data-edge-role="error" data-composition-points="908.2,146;908.2,346" d="M 908.2 146 L 908.2 346" class="a-dashed" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
-        <path data-edge-from="validate_gate" data-edge-to="file_email" data-edge-label="valid" data-edge-key="13" data-edge-id="validate-to-file" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="980.7,120;1027.5,120" d="M 980.7 120 L 1027.5 120" class="a-emphasis" data-animate="edge" style="--step:4" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="daily_timer" data-edge-to="query_log" data-edge-key="11" data-edge-id="timer-to-query" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="208,498;236,498" d="M 208 498 L 236 498" class="a-emphasis" data-animate="edge" style="--step:12" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path data-edge-from="validate_gate" data-edge-to="log_exception" data-edge-label="invalid" data-edge-key="12" data-edge-id="validate-to-exception" data-composition-routing="workflow-v2-auto" data-edge-role="error" data-composition-points="913.2,146;913.2,346" d="M 913.2 146 L 913.2 346" class="a-dashed" data-animate="edge" style="--step:12" stroke-width="1.4" marker-end="url(#arrowhead-dashed)"/>
+        <path data-edge-from="validate_gate" data-edge-to="file_email" data-edge-label="valid" data-edge-key="13" data-edge-id="validate-to-file" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="993.2,120;1040,120" d="M 993.2 120 L 1040 120" class="a-emphasis" data-animate="edge" style="--step:4" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
 
         <!-- Nodes -->
         <g id="node-new_email" data-node-id="new_email" data-node-label="New Email Arrives" tabindex="0" role="button" aria-label="Focus New Email Arrives, Outlook trigger (full thread), Outlook + Power Automate (Email Flow)" aria-pressed="false" data-node-kind="external" data-node-sublabel="Outlook trigger (full thread)" data-node-context="Outlook + Power Automate (Email Flow)">
           <title>New Email Arrives · Outlook trigger (full thread) · Outlook + Power Automate (Email Flow)</title>
-          <rect x="65.5" y="94" width="150" height="52" rx="6" class="c-mask"/>
-          <rect x="65.5" y="94" width="150" height="52" rx="6" class="c-external" data-animate="node" style="--step:0" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(71.5 100) scale(0.6875)">
+          <rect x="48" y="94" width="160" height="52" rx="6" class="c-mask"/>
+          <rect x="48" y="94" width="160" height="52" rx="6" class="c-external" data-animate="node" style="--step:0" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(54 100) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="140.6" y="115" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">New Email Arrives</text>
-          <text data-detail="context" x="140.5" y="132" class="t-muted" font-size="8" text-anchor="middle">Outlook trigger (full thread)</text>
+          <text data-node-label="" data-detail-anchor="" x="128" y="115" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">New Email Arrives</text>
+          <text data-detail="context" x="128" y="132" class="t-muted" font-size="8" text-anchor="middle">Outlook trigger (full thread)</text>
         </g>
 
         <g id="node-parse_decision" data-node-id="parse_decision" data-node-label="Parse JSON + Decide" tabindex="0" role="button" aria-label="Focus Parse JSON + Decide, Power Automate, Outlook + Power Automate (Email Flow)" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Power Automate" data-node-tag="Condition action" data-node-context="Outlook + Power Automate (Email Flow)">
           <title>Parse JSON + Decide · Power Automate · Outlook + Power Automate (Email Flow) · Condition action</title>
-          <rect x="444" y="86" width="150" height="68" rx="6" class="c-mask"/>
-          <rect x="444" y="86" width="150" height="68" rx="6" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(450 92) scale(0.6875)">
+          <rect x="424" y="86" width="160" height="68" rx="6" class="c-mask"/>
+          <rect x="424" y="86" width="160" height="68" rx="6" class="c-backend" data-animate="node" style="--step:2" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(430 92) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="525.7" y="107" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Parse JSON + Decide</text>
-          <text data-detail="context" x="519" y="124" class="t-muted" font-size="8" text-anchor="middle">Power Automate</text>
-        <text data-detail="fine" x="519" y="142" class="t-backend" font-size="7" text-anchor="middle">Condition action</text>
+          <text data-node-label="" data-detail-anchor="" x="505.7" y="107" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Parse JSON + Decide</text>
+          <text data-detail="context" x="504" y="124" class="t-muted" font-size="8" text-anchor="middle">Power Automate</text>
+        <text data-detail="fine" x="504" y="142" class="t-backend" font-size="7" text-anchor="middle">Condition action</text>
         </g>
 
         <g id="node-normalize_ref" data-node-id="normalize_ref" data-node-label="Normalize Reference" tabindex="0" role="button" aria-label="Focus Normalize Reference, Standardize format, Outlook + Power Automate (Email Flow)" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Standardize format" data-node-tag="Expression action" data-node-context="Outlook + Power Automate (Email Flow)">
           <title>Normalize Reference · Standardize format · Outlook + Power Automate (Email Flow) · Expression action</title>
-          <rect x="655.2" y="86" width="150" height="68" rx="6" class="c-mask"/>
-          <rect x="655.2" y="86" width="150" height="68" rx="6" class="c-backend" data-animate="node" style="--step:3" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(661.2 92) scale(0.6875)">
+          <rect x="645.2" y="86" width="160" height="68" rx="6" class="c-mask"/>
+          <rect x="645.2" y="86" width="160" height="68" rx="6" class="c-backend" data-animate="node" style="--step:3" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(651.2 92) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="736.9000000000001" y="107" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Normalize Reference</text>
-          <text data-detail="context" x="730.2" y="124" class="t-muted" font-size="8" text-anchor="middle">Standardize format</text>
-        <text data-detail="fine" x="730.2" y="142" class="t-backend" font-size="7" text-anchor="middle">Expression action</text>
+          <text data-node-label="" data-detail-anchor="" x="726.9000000000001" y="107" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Normalize Reference</text>
+          <text data-detail="context" x="725.2" y="124" class="t-muted" font-size="8" text-anchor="middle">Standardize format</text>
+        <text data-detail="fine" x="725.2" y="142" class="t-backend" font-size="7" text-anchor="middle">Expression action</text>
         </g>
 
         <g id="node-validate_gate" data-node-id="validate_gate" data-node-label="Folder Rule Validator" tabindex="0" role="button" aria-label="Focus Folder Rule Validator, Condition action, Outlook + Power Automate (Email Flow)" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Condition action" data-node-context="Outlook + Power Automate (Email Flow)">
           <title>Folder Rule Validator · Condition action · Outlook + Power Automate (Email Flow)</title>
-          <rect x="835.7" y="94" width="145" height="52" rx="6" class="c-mask"/>
-          <rect x="835.7" y="94" width="145" height="52" rx="6" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(841.7 100) scale(0.6875)">
+          <rect x="833.2" y="94" width="160" height="52" rx="6" class="c-mask"/>
+          <rect x="833.2" y="94" width="160" height="52" rx="6" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(839.2 100) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="908.2" y="126" class="t-primary" font-size="10.8" font-weight="600" text-anchor="middle">Folder Rule Validator</text>
-          <text data-detail="context" x="908.2" y="140.9" class="t-muted" font-size="8" text-anchor="middle">Condition action</text>
+          <text data-node-label="" data-detail-anchor="" x="913.2" y="126.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Folder Rule Validator</text>
+          <text data-detail="context" x="913.2" y="141.1" class="t-muted" font-size="8" text-anchor="middle">Condition action</text>
         </g>
 
         <g id="node-file_email" data-node-id="file_email" data-node-label="File + Move Email" tabindex="0" role="button" aria-label="Focus File + Move Email, Outlook connector, Outlook + Power Automate (Email Flow)" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Outlook connector" data-node-context="Outlook + Power Automate (Email Flow)">
           <title>File + Move Email · Outlook connector · Outlook + Power Automate (Email Flow)</title>
-          <rect x="1027.5" y="94" width="150" height="52" rx="6" class="c-mask"/>
-          <rect x="1027.5" y="94" width="150" height="52" rx="6" class="c-backend" data-animate="node" style="--step:5" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(1033.5 100) scale(0.6875)">
+          <rect x="1040" y="94" width="160" height="52" rx="6" class="c-mask"/>
+          <rect x="1040" y="94" width="160" height="52" rx="6" class="c-backend" data-animate="node" style="--step:5" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(1046 100) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1102.6" y="115" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">File + Move Email</text>
-          <text data-detail="context" x="1102.5" y="132" class="t-muted" font-size="8" text-anchor="middle">Outlook connector</text>
+          <text data-node-label="" data-detail-anchor="" x="1120" y="115" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">File + Move Email</text>
+          <text data-detail="context" x="1120" y="132" class="t-muted" font-size="8" text-anchor="middle">Outlook connector</text>
         </g>
 
         <g id="node-agent_call" data-node-id="agent_call" data-node-label="Call Azure OpenAI" tabindex="0" role="button" aria-label="Focus Call Azure OpenAI, Returns JSON only, Azure OpenAI (via Foundry)" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Returns JSON only" data-node-tag="Instructions + Skill" data-node-context="Azure OpenAI (via Foundry)">
           <title>Call Azure OpenAI · Returns JSON only · Azure OpenAI (via Foundry) · Instructions + Skill</title>
-          <rect x="263.5" y="212" width="145" height="68" rx="6" class="c-mask"/>
-          <rect x="263.5" y="212" width="145" height="68" rx="6" class="c-backend" data-animate="node" style="--step:1" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(269.5 218) scale(0.6875)">
+          <rect x="236" y="212" width="160" height="68" rx="6" class="c-mask"/>
+          <rect x="236" y="212" width="160" height="68" rx="6" class="c-backend" data-animate="node" style="--step:1" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(242 218) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="338.6" y="233" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Call Azure OpenAI</text>
-          <text data-detail="context" x="336" y="250" class="t-muted" font-size="8" text-anchor="middle">Returns JSON only</text>
-        <text data-detail="fine" x="336" y="268" class="t-backend" font-size="7" text-anchor="middle">Instructions + Skill</text>
+          <text data-node-label="" data-detail-anchor="" x="316" y="233" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Call Azure OpenAI</text>
+          <text data-detail="context" x="316" y="250" class="t-muted" font-size="8" text-anchor="middle">Returns JSON only</text>
+        <text data-detail="fine" x="316" y="268" class="t-backend" font-size="7" text-anchor="middle">Instructions + Skill</text>
         </g>
 
         <g id="node-log_exception" data-node-id="log_exception" data-node-label="Log Exception" tabindex="0" role="button" aria-label="Focus Log Exception, No ref / invalid format, Exception Handling + Dataverse Log" aria-pressed="false" data-node-kind="backend" data-node-sublabel="No ref / invalid format" data-node-context="Exception Handling + Dataverse Log">
           <title>Log Exception · No ref / invalid format · Exception Handling + Dataverse Log</title>
-          <rect x="835.7" y="346" width="145" height="52" rx="6" class="c-mask"/>
-          <rect x="835.7" y="346" width="145" height="52" rx="6" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(841.7 352) scale(0.6875)">
+          <rect x="833.2" y="346" width="160" height="52" rx="6" class="c-mask"/>
+          <rect x="833.2" y="346" width="160" height="52" rx="6" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(839.2 352) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="908.2" y="367" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Log Exception</text>
-          <text data-detail="context" x="908.2" y="384" class="t-muted" font-size="8" text-anchor="middle">No ref / invalid format</text>
+          <text data-node-label="" data-detail-anchor="" x="913.2" y="367" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Log Exception</text>
+          <text data-detail="context" x="913.2" y="384" class="t-muted" font-size="8" text-anchor="middle">No ref / invalid format</text>
         </g>
 
         <g id="node-activity_log" data-node-id="activity_log" data-node-label="Activity Log" tabindex="0" role="button" aria-label="Focus Activity Log, Dataverse table, Exception Handling + Dataverse Log" aria-pressed="false" data-node-kind="database" data-node-sublabel="Dataverse table" data-node-context="Exception Handling + Dataverse Log">
           <title>Activity Log · Dataverse table · Exception Handling + Dataverse Log</title>
-          <rect x="1027.5" y="346" width="150" height="52" rx="6" class="c-mask"/>
-          <rect x="1027.5" y="346" width="150" height="52" rx="6" class="c-database" data-animate="node" style="--step:6" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(1033.5 352) scale(0.6875)">
+          <rect x="1040" y="346" width="160" height="52" rx="6" class="c-mask"/>
+          <rect x="1040" y="346" width="160" height="52" rx="6" class="c-database" data-animate="node" style="--step:6" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="database" class="semantic-sigil s-database" transform="translate(1046 352) scale(0.6875)">
             <ellipse cx="8" cy="4" rx="5" ry="2"/>
             <path d="M3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1102.5" y="367" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Activity Log</text>
-          <text data-detail="context" x="1102.5" y="384" class="t-muted" font-size="8" text-anchor="middle">Dataverse table</text>
+          <text data-node-label="" data-detail-anchor="" x="1120" y="367" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Activity Log</text>
+          <text data-detail="context" x="1120" y="384" class="t-muted" font-size="8" text-anchor="middle">Dataverse table</text>
         </g>
 
         <g id="node-daily_timer" data-node-id="daily_timer" data-node-label="Daily Recurrence Trigger" tabindex="0" role="button" aria-label="Focus Daily Recurrence Trigger, 5:00 PM Eastern, Power Automate (Daily Report) + Business Owners" aria-pressed="false" data-node-kind="external" data-node-sublabel="5:00 PM Eastern" data-node-context="Power Automate (Daily Report) + Business Owners">
           <title>Daily Recurrence Trigger · 5:00 PM Eastern · Power Automate (Daily Report) + Business Owners</title>
-          <rect x="48" y="472" width="185" height="52" rx="6" class="c-mask"/>
-          <rect x="48" y="472" width="185" height="52" rx="6" class="c-external" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <rect x="48" y="472" width="160" height="52" rx="6" class="c-mask"/>
+          <rect x="48" y="472" width="160" height="52" rx="6" class="c-external" data-animate="node" style="--step:12" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(54 478) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="146.2" y="493" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Daily Recurrence Trigger</text>
-          <text data-detail="context" x="140.5" y="510" class="t-muted" font-size="8" text-anchor="middle">5:00 PM Eastern</text>
+          <text data-node-label="" data-detail-anchor="" x="128" y="503.6" class="t-primary" font-size="10.5" font-weight="600" text-anchor="middle">Daily Recurrence Trigger</text>
+          <text data-detail="context" x="128" y="518.4" class="t-muted" font-size="8" text-anchor="middle">5:00 PM Eastern</text>
         </g>
 
         <g id="node-query_log" data-node-id="query_log" data-node-label="Query Dataverse Log" tabindex="0" role="button" aria-label="Focus Query Dataverse Log, Rows created today, Power Automate (Daily Report) + Business Owners" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Rows created today" data-node-context="Power Automate (Daily Report) + Business Owners">
           <title>Query Dataverse Log · Rows created today · Power Automate (Daily Report) + Business Owners</title>
-          <rect x="261" y="472" width="150" height="52" rx="6" class="c-mask"/>
-          <rect x="261" y="472" width="150" height="52" rx="6" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(267 478) scale(0.6875)">
+          <rect x="236" y="472" width="160" height="52" rx="6" class="c-mask"/>
+          <rect x="236" y="472" width="160" height="52" rx="6" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(242 478) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="342.7" y="493" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Query Dataverse Log</text>
-          <text data-detail="context" x="336" y="510" class="t-muted" font-size="8" text-anchor="middle">Rows created today</text>
+          <text data-node-label="" data-detail-anchor="" x="317.7" y="493" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Query Dataverse Log</text>
+          <text data-detail="context" x="316" y="510" class="t-muted" font-size="8" text-anchor="middle">Rows created today</text>
         </g>
 
         <g id="node-compose_report" data-node-id="compose_report" data-node-label="Compose Daily Report" tabindex="0" role="button" aria-label="Focus Compose Daily Report, Folders, filings, exceptions, Power Automate (Daily Report) + Business Owners" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Folders, filings, exceptions" data-node-context="Power Automate (Daily Report) + Business Owners">
           <title>Compose Daily Report · Folders, filings, exceptions · Power Automate (Daily Report) + Business Owners</title>
-          <rect x="439" y="472" width="160" height="52" rx="6" class="c-mask"/>
-          <rect x="439" y="472" width="160" height="52" rx="6" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(445 478) scale(0.6875)">
+          <rect x="424" y="472" width="160" height="52" rx="6" class="c-mask"/>
+          <rect x="424" y="472" width="160" height="52" rx="6" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(430 478) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="524" y="493" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Compose Daily Report</text>
-          <text data-detail="context" x="519" y="510" class="t-muted" font-size="8" text-anchor="middle">Folders, filings, exceptions</text>
+          <text data-node-label="" data-detail-anchor="" x="509" y="493" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Compose Daily Report</text>
+          <text data-detail="context" x="504" y="510" class="t-muted" font-size="8" text-anchor="middle">Folders, filings, exceptions</text>
         </g>
 
         <g id="node-send_report" data-node-id="send_report" data-node-label="Send Report Email" tabindex="0" role="button" aria-label="Focus Send Report Email, Outlook connector, Power Automate (Daily Report) + Business Owners" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Outlook connector" data-node-context="Power Automate (Daily Report) + Business Owners">
           <title>Send Report Email · Outlook connector · Power Automate (Daily Report) + Business Owners</title>
-          <rect x="655.2" y="472" width="150" height="52" rx="6" class="c-mask"/>
-          <rect x="655.2" y="472" width="150" height="52" rx="6" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(661.2 478) scale(0.6875)">
+          <rect x="645.2" y="472" width="160" height="52" rx="6" class="c-mask"/>
+          <rect x="645.2" y="472" width="160" height="52" rx="6" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(651.2 478) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="730.3000000000001" y="493" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Send Report Email</text>
-          <text data-detail="context" x="730.2" y="510" class="t-muted" font-size="8" text-anchor="middle">Outlook connector</text>
+          <text data-node-label="" data-detail-anchor="" x="725.2" y="493" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Send Report Email</text>
+          <text data-detail="context" x="725.2" y="510" class="t-muted" font-size="8" text-anchor="middle">Outlook connector</text>
         </g>
 
         <g id="node-business_owners" data-node-id="business_owners" data-node-label="Business Owners" tabindex="0" role="button" aria-label="Focus Business Owners, Daily report recipients, Power Automate (Daily Report) + Business Owners" aria-pressed="false" data-node-kind="external" data-node-sublabel="Daily report recipients" data-node-context="Power Automate (Daily Report) + Business Owners">
           <title>Business Owners · Daily report recipients · Power Automate (Daily Report) + Business Owners</title>
-          <rect x="833.2" y="472" width="150" height="52" rx="6" class="c-mask"/>
-          <rect x="833.2" y="472" width="150" height="52" rx="6" class="c-external" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <rect x="833.2" y="472" width="160" height="52" rx="6" class="c-mask"/>
+          <rect x="833.2" y="472" width="160" height="52" rx="6" class="c-external" data-animate="node" style="--step:12" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="external" class="semantic-sigil s-external" transform="translate(839.2 478) scale(0.6875)">
             <rect x="2.5" y="5" width="8.5" height="8" rx="1.5"/>
             <path d="M8 2.5h5.5V8M13.5 2.5 7.5 8.5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="908.2" y="493" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Business Owners</text>
-          <text data-detail="context" x="908.2" y="510" class="t-muted" font-size="8" text-anchor="middle">Daily report recipients</text>
+          <text data-node-label="" data-detail-anchor="" x="913.2" y="493" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Business Owners</text>
+          <text data-detail="context" x="913.2" y="510" class="t-muted" font-size="8" text-anchor="middle">Daily report recipients</text>
         </g>
 
         <!-- Edge labels -->
         <g data-detail="context" data-edge-from="agent_call" data-edge-to="parse_decision" data-edge-label="JSON result" data-edge-key="0" data-edge-id="call-to-parse">
-          <rect x="358.6" y="100" width="62.8" height="14" rx="3" class="c-mask"/>
-          <text x="390" y="110" class="t-edge-emphasis" font-size="8" text-anchor="middle">JSON result</text>
+          <rect x="338.6" y="100" width="62.8" height="14" rx="3" class="c-mask"/>
+          <text x="370" y="110" class="t-edge-emphasis" font-size="8" text-anchor="middle">JSON result</text>
         </g>
 
 
         <g data-detail="context" data-edge-from="log_exception" data-edge-to="activity_log" data-edge-label="logged" data-edge-key="3" data-edge-id="exception-to-log">
-          <rect x="984.7" y="352" width="38.8" height="14" rx="3" class="c-mask"/>
-          <text x="1004.1" y="362" class="t-edge-dashed" font-size="8" text-anchor="middle">logged</text>
+          <rect x="997.2" y="352" width="38.8" height="14" rx="3" class="c-mask"/>
+          <text x="1016.6" y="362" class="t-edge-dashed" font-size="8" text-anchor="middle">logged</text>
         </g>
         <g data-detail="context" data-edge-from="file_email" data-edge-to="activity_log" data-edge-label="filed" data-edge-key="4" data-edge-id="file-to-log">
-          <rect x="1085.5" y="236" width="34" height="14" rx="3" class="c-mask"/>
-          <text x="1102.5" y="246" class="t-edge-emphasis" font-size="8" text-anchor="middle">filed</text>
+          <rect x="1103" y="236" width="34" height="14" rx="3" class="c-mask"/>
+          <text x="1120" y="246" class="t-edge-emphasis" font-size="8" text-anchor="middle">filed</text>
         </g>
         <g data-detail="context" data-edge-from="activity_log" data-edge-to="query_log" data-edge-label="read day&#39;s activity" data-edge-key="5" data-edge-id="log-to-query">
-          <rect x="668.65" y="532" width="101.2" height="14" rx="3" class="c-mask"/>
-          <text x="719.25" y="542" class="t-edge-dashed" font-size="8" text-anchor="middle">read day&#39;s activity</text>
+          <rect x="667.4" y="532" width="101.2" height="14" rx="3" class="c-mask"/>
+          <text x="718" y="542" class="t-edge-dashed" font-size="8" text-anchor="middle">read day&#39;s activity</text>
         </g>
 
         <g data-detail="context" data-edge-from="parse_decision" data-edge-to="log_exception" data-edge-label="not found" data-edge-key="7" data-edge-id="parse-to-exception">
-          <rect x="650.75" y="352" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
-          <text x="677.35" y="362" class="t-edge-dashed" font-size="8" text-anchor="middle">not found</text>
+          <rect x="642" y="352" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
+          <text x="668.6" y="362" class="t-edge-dashed" font-size="8" text-anchor="middle">not found</text>
         </g>
         <g data-detail="context" data-edge-from="parse_decision" data-edge-to="normalize_ref" data-edge-label="ref found" data-edge-key="8" data-edge-id="parse-to-validate">
-          <rect x="598" y="100" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
-          <text x="624.6" y="110" class="t-edge-emphasis" font-size="8" text-anchor="middle">ref found</text>
+          <rect x="588" y="100" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
+          <text x="614.6" y="110" class="t-edge-emphasis" font-size="8" text-anchor="middle">ref found</text>
         </g>
 
 
 
         <g data-detail="context" data-edge-from="validate_gate" data-edge-to="log_exception" data-edge-label="invalid" data-edge-key="12" data-edge-id="validate-to-exception">
-          <rect x="886.4000000000001" y="236" width="43.6" height="14" rx="3" class="c-mask"/>
-          <text x="908.2" y="246" class="t-edge-dashed" font-size="8" text-anchor="middle">invalid</text>
+          <rect x="891.4000000000001" y="236" width="43.6" height="14" rx="3" class="c-mask"/>
+          <text x="913.2" y="246" class="t-edge-dashed" font-size="8" text-anchor="middle">invalid</text>
         </g>
         <g data-detail="context" data-edge-from="validate_gate" data-edge-to="file_email" data-edge-label="valid" data-edge-key="13" data-edge-id="validate-to-file">
-          <rect x="987.1" y="100" width="34" height="14" rx="3" class="c-mask"/>
-          <text x="1004.1" y="110" class="t-edge-emphasis" font-size="8" text-anchor="middle">valid</text>
+          <rect x="999.6" y="100" width="34" height="14" rx="3" class="c-mask"/>
+          <text x="1016.6" y="110" class="t-edge-emphasis" font-size="8" text-anchor="middle">valid</text>
         </g>
 
         <!-- Legend -->

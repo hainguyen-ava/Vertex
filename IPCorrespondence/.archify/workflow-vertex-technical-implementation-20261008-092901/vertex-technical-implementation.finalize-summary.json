@@ -6,14 +6,14 @@
   "type": "workflow",
   "quality": "showcase",
   "specification": {
-    "path": "C:\\Temp\\archify-tdd-fix\\candidate.json",
-    "sha256": "655b76755e6a69810f7c59c7ed7788733879ccefc0217525ee982e542cd4957a",
+    "path": "C:\\Temp\\archify-tdd-fix2\\candidate.json",
+    "sha256": "6415de14977b30fd9186d5bb8bee57d3e6cdbf917114caa7ba1bf186b504ba77",
     "bytes": 7555
   },
   "artifact": {
-    "path": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
-    "sha256": "3ddb631c8d9154b42b0fe36ed86dd30a88d47eb7649480b04828eabdfb5c2e7e",
-    "bytes": 770861
+    "path": "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.html",
+    "sha256": "c5ede0626a4ba2000b3b46d22780da2452a8f1d77b3ac2371f8e5f91137b6ec2",
+    "bytes": 770773
   },
   "gates": {
     "validate": "pass",
@@ -28,9 +28,9 @@
     "truncated": false
   },
   "evidence": {
-    "receipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.finalize.json",
-    "summaryReceipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.finalize-summary.json",
-    "browserCheckReceipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.browser-check.json"
+    "receipt": "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.finalize.json",
+    "summaryReceipt": "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Temp\\archify-tdd-fix2\\vertex-technical-implementation.browser-check.json"
   },
   "update": {
     "status": "current",
@@ -43,5 +43,5 @@
     "noticeText": null
   },
   "visualReview": "not-requested",
-  "durationMs": 10284
+  "durationMs": 13103
 }
