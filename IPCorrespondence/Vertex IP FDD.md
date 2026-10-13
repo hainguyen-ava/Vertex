@@ -134,7 +134,7 @@ This section consolidates the solution's functional requirements into nine numbe
 | FR-2.1 | The agent shall scan the email **title (subject) first**; if no reference is found, it shall scan the **message body**. |
 | FR-2.2 | If no reference is found in the subject or current body, the agent shall inspect the **most recent quoted correspondence** in the thread. |
 | FR-2.3 | The agent shall recognize references following common lead-in phrases, including "Client Reference:", "Your Ref", "Your Reference:", "Your Ref No", or similar. |
-| FR-2.4 | The agent shall support the current known matter prefixes (VPI, ALP, EXO, MOD, SEM, VIA, VMN), subject to confirmation with Vertex IP Operations; new prefixes require a change request. |
+| FR-2.4 | The agent shall support the current known matter prefixes, to be confirmed with Vertex IP Operations prior to go-live; new prefixes require a change request. |
 
 ### FR-3 — Reference Normalization
 
@@ -159,6 +159,7 @@ This section consolidates the solution's functional requirements into nine numbe
 | FR-5.2 | **If a matching folder exists**, the agent shall move the email into that folder. |
 | FR-5.3 | **If no matching folder exists**, the agent shall create a new folder named after the normalized reference, then move the email into it. |
 | FR-5.4 | Every folder-creation event shall be recorded as an audit/activity entry. |
+| FR-5.5 | Prior to go-live, any existing Vertex family folders that do not currently use the VPI prefix shall undergo a one-time folder migration to rename them to the standard VPI-prefixed naming convention, so the agent can reliably match against them going forward. |
 
 ### FR-6 — Automated Filing Rules
 
@@ -197,30 +198,6 @@ This section consolidates the solution's functional requirements into nine numbe
 | FR-9.6 | The report shall list **normalization activity** (original value, normalized value, source field) for the day. |
 
 ## 6. Reference Identification
-
-### Supported Family References
-
-Examples include:
-
-1. VPI-18-114
-2. ALP-25-001
-3. EXO-22-115
-4. MOD-24-220
-5. SEM-26-788
-6. VIA-05-201
-7. VMN-19-114
-
-Based on current samples, the solution shall support the matter prefixes:
-
-- VPI
-- ALP
-- EXO
-- MOD
-- SEM
-- VIA
-- VMN
-
-> **Note:** this prefix list reflects current samples. It should be confirmed with Vertex IP Operations as complete prior to go-live; any new prefixes will require a change request.
 
 ### Reference Search Order
 
@@ -279,6 +256,10 @@ Inbox
 ```
 
 Family folders are the filing destination.
+
+### One-Time Folder Migration
+
+Some existing Vertex family folders do not currently carry the VPI prefix (e.g., a folder named `18-114` instead of `VPI-18-114`). Because the agent matches and files against the normalized, prefixed reference, these folders shall be renamed as a **one-time migration performed prior to go-live**. This is a manual/scripted pre-go-live activity, not an ongoing automated behavior (see Appendix — "Folder rename").
 
 Country-specific folders are ignored for routing purposes.
 
@@ -481,7 +462,7 @@ Operational KPIs including:
 | Slash format | Normalize and process |
 | Country suffixes | Remove for routing |
 | Duplicate processing | Prevent re-processing |
-| Folder rename | Do not rename automatically |
+| Folder rename | Do not rename automatically (one-time pre-go-live migration only, see §8) |
 
 ---
 

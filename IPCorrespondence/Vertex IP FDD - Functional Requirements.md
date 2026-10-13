@@ -19,7 +19,7 @@ Consolidated from the architecture diagram (`vertex-email-rules.html`) and the F
 | FR-2.1 | The agent shall scan the email **title (subject) first**; if no reference is found, it shall scan the **message body**. |
 | FR-2.2 | If no reference is found in the subject or current body, the agent shall inspect the **most recent quoted correspondence** in the thread. |
 | FR-2.3 | The agent shall recognize references following common lead-in phrases, including "Client Reference:", "Your Ref", "Your Reference:", "Your Ref No", or similar. |
-| FR-2.4 | The agent shall support the current known matter prefixes (VPI, ALP, EXO, MOD, SEM, VIA, VMN), subject to confirmation with Vertex IP Operations; new prefixes require a change request. |
+| FR-2.4 | The agent shall support the current known matter prefixes, to be confirmed with Vertex IP Operations prior to go-live; new prefixes require a change request. |
 
 ### FR-3 — Reference Normalization
 
@@ -44,6 +44,7 @@ Consolidated from the architecture diagram (`vertex-email-rules.html`) and the F
 | FR-5.2 | **If a matching folder exists**, the agent shall move the email into that folder. |
 | FR-5.3 | **If no matching folder exists**, the agent shall create a new folder named after the normalized reference, then move the email into it. |
 | FR-5.4 | Every folder-creation event shall be recorded as an audit/activity entry. |
+| FR-5.5 | Prior to go-live, any existing Vertex family folders that do not currently use the VPI prefix shall undergo a one-time folder migration to rename them to the standard VPI-prefixed naming convention, so the agent can reliably match against them going forward. |
 
 ### FR-6 — Automated Filing Rules
 
