@@ -7,9 +7,9 @@
 | **Project** | IP Correspondence Automation |
 | **Solution Platform** | Microsoft Power Platform (Power Automate, Outlook, Dataverse/SharePoint) |
 | **Document Type** | Functional Design Document (FDD) |
-| **Version** | 1.0 Draft |
+| **Version** | 1.0 |
 | **Prepared By** | Hai Nguyen |
-| **Date** | October 2026 |
+| **Date** | October 13, 2026 |
 
 ---
 
@@ -19,7 +19,7 @@
 
 | Version | Date | Author | Description |
 |---|---|---|---|
-| 1.0 Draft | October 2026 | Hai Nguyen | Initial draft issued for internal and stakeholder review |
+| 1.0 | October 13, 2026 | Hai Nguyen | Initial baseline issued for internal and stakeholder review |
 
 ### Approvals
 

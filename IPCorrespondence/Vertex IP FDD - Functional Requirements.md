@@ -1,7 +1,18 @@
 # Functional Requirements
 ## Vertex IP Correspondence Automation Agent
 
+| | |
+|---|---|
+| **Version** | 1.0 |
+| **Date** | October 13, 2026 |
+
 Consolidated from the architecture diagram (`vertex-email-rules.html`) and the Functional Design Document (`Vertex IP FDD - Avanade Formatted.docx`).
+
+### Revision History
+
+| Version | Date | Description |
+|---|---|---|
+| 1.0 | October 13, 2026 | Initial baseline issued for internal and stakeholder review |
 
 ---
 
