@@ -8,9 +8,28 @@
 | **Solution Platform** | Microsoft Power Platform (Power Automate, Outlook, Dataverse) + Azure AI Foundry (Azure OpenAI) |
 | **Document Type** | Technical Design Document (TDD) |
 | **Companion Document** | Vertex IP FDD (Functional Design Document) — functional requirements, business rules, exception handling |
-| **Version** | 1.0 Draft |
+| **Version** | 1.0 |
 | **Prepared By** | Hai Nguyen |
-| **Date** | October 2026 |
+| **Date** | October 13, 2026 |
+
+---
+
+## Revision History and Approvals
+
+### Revision History
+
+| Version | Date | Author | Description |
+|---|---|---|---|
+| 1.0 | October 13, 2026 | Hai Nguyen | Initial baseline issued for internal and stakeholder review |
+
+### Approvals
+
+This document requires the following approvals before Draft status is removed and the design is baselined.
+
+| Name | Role | Decision | Date |
+|---|---|---|---|
+| | Avanade Technical Lead | Pending | |
+| | Vertex IT / Engineering Lead | Pending | |
 
 ---
 
