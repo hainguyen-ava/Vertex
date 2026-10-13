@@ -6,14 +6,14 @@
   "type": "workflow",
   "quality": "showcase",
   "specification": {
-    "path": "C:\\Temp\\archify-vertex-technical\\candidate.json",
-    "sha256": "9cfc96f8e90bf2eec7cf69dccd44f8e359f0783c7cdfa61b5e493037ce365af4",
-    "bytes": 7046
+    "path": "C:\\Temp\\archify-tdd-fix\\candidate.json",
+    "sha256": "655b76755e6a69810f7c59c7ed7788733879ccefc0217525ee982e542cd4957a",
+    "bytes": 7555
   },
   "artifact": {
-    "path": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
-    "sha256": "92ef8863a112d70d628375f696cf4014a40f5975697ba1c8dc5e936986eab65d",
-    "bytes": 769829
+    "path": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
+    "sha256": "3ddb631c8d9154b42b0fe36ed86dd30a88d47eb7649480b04828eabdfb5c2e7e",
+    "bytes": 770861
   },
   "gates": {
     "validate": "pass",
@@ -28,20 +28,20 @@
     "truncated": false
   },
   "evidence": {
-    "receipt": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.finalize.json",
-    "summaryReceipt": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.finalize-summary.json",
-    "browserCheckReceipt": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.browser-check.json"
+    "receipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.finalize.json",
+    "summaryReceipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.browser-check.json"
   },
   "update": {
     "status": "current",
     "installedVersion": "3.0.1",
     "availableVersion": "3.0.1",
     "releaseNotes": null,
-    "checkedAt": "2026-10-09T11:55:02.534Z",
+    "checkedAt": "2026-10-13T17:05:17.835Z",
     "source": "cache",
     "noticeRequired": false,
     "noticeText": null
   },
   "visualReview": "not-requested",
-  "durationMs": 10832
+  "durationMs": 10284
 }

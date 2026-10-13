@@ -6,11 +6,11 @@
   "status": "pass",
   "visualReview": "not-requested",
   "provenance": "current",
-  "deliveryReceiptId": "2e68814f-664e-4bbd-8eb6-cd1dd816af01",
+  "deliveryReceiptId": "63896e2c-a986-42eb-9216-acb499911edd",
   "artifact": {
-    "path": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
-    "sha256": "92ef8863a112d70d628375f696cf4014a40f5975697ba1c8dc5e936986eab65d",
-    "bytes": 769829
+    "path": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
+    "sha256": "3ddb631c8d9154b42b0fe36ed86dd30a88d47eb7649480b04828eabdfb5c2e7e",
+    "bytes": 770861
   },
   "state": {
     "detail": "read",
@@ -41,8 +41,8 @@
         "readerOverflow": null,
         "readerFit": null,
         "ok": true,
-        "readerWidth": 1344,
-        "diagramWidth": 1314,
+        "readerWidth": 1342,
+        "diagramWidth": 1312,
         "pageComposition": {
           "bodyPaddingPx": 12,
           "headerPx": 78,
@@ -51,7 +51,7 @@
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -59,8 +59,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -110,7 +110,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",
@@ -146,8 +146,8 @@
         "readerOverflow": null,
         "readerFit": null,
         "ok": true,
-        "readerWidth": 1406,
-        "diagramWidth": 1376,
+        "readerWidth": 1404,
+        "diagramWidth": 1374,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 86,
@@ -156,7 +156,7 @@
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -164,8 +164,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -215,7 +215,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",
@@ -251,8 +251,8 @@
         "readerOverflow": null,
         "readerFit": null,
         "ok": true,
-        "readerWidth": 1552,
-        "diagramWidth": 1522,
+        "readerWidth": 1549,
+        "diagramWidth": 1519,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 86,
@@ -261,7 +261,7 @@
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -269,8 +269,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -320,7 +320,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",
@@ -362,11 +362,11 @@
           "bodyPaddingPx": 64,
           "headerPx": 94,
           "diagramChromePx": 94,
-          "svgPx": 1025,
+          "svgPx": 1027,
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -374,8 +374,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -425,7 +425,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",
@@ -514,8 +514,8 @@
         "readerOverflow": null,
         "readerFit": null,
         "ok": true,
-        "readerWidth": 1344,
-        "diagramWidth": 1314,
+        "readerWidth": 1342,
+        "diagramWidth": 1312,
         "pageComposition": {
           "bodyPaddingPx": 12,
           "headerPx": 78,
@@ -524,7 +524,7 @@
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -532,8 +532,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -583,7 +583,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",
@@ -619,8 +619,8 @@
         "readerOverflow": null,
         "readerFit": null,
         "ok": true,
-        "readerWidth": 1406,
-        "diagramWidth": 1376,
+        "readerWidth": 1404,
+        "diagramWidth": 1374,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 86,
@@ -629,7 +629,7 @@
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -637,8 +637,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -688,7 +688,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",
@@ -724,8 +724,8 @@
         "readerOverflow": null,
         "readerFit": null,
         "ok": true,
-        "readerWidth": 1552,
-        "diagramWidth": 1522,
+        "readerWidth": 1549,
+        "diagramWidth": 1519,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 86,
@@ -734,7 +734,7 @@
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -742,8 +742,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -793,7 +793,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",
@@ -835,11 +835,11 @@
           "bodyPaddingPx": 64,
           "headerPx": 94,
           "diagramChromePx": 94,
-          "svgPx": 1025,
+          "svgPx": 1027,
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -847,8 +847,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -898,7 +898,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",
@@ -939,8 +939,8 @@
         "readerOverflow": null,
         "readerFit": null,
         "ok": true,
-        "readerWidth": 1344,
-        "diagramWidth": 1314,
+        "readerWidth": 1342,
+        "diagramWidth": 1312,
         "pageComposition": {
           "bodyPaddingPx": 12,
           "headerPx": 78,
@@ -949,7 +949,7 @@
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -957,8 +957,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -1008,7 +1008,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",
@@ -1044,8 +1044,8 @@
         "readerOverflow": null,
         "readerFit": null,
         "ok": true,
-        "readerWidth": 1406,
-        "diagramWidth": 1376,
+        "readerWidth": 1404,
+        "diagramWidth": 1374,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 86,
@@ -1054,7 +1054,7 @@
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -1062,8 +1062,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -1113,7 +1113,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",
@@ -1149,8 +1149,8 @@
         "readerOverflow": null,
         "readerFit": null,
         "ok": true,
-        "readerWidth": 1552,
-        "diagramWidth": 1522,
+        "readerWidth": 1549,
+        "diagramWidth": 1519,
         "pageComposition": {
           "bodyPaddingPx": 64,
           "headerPx": 86,
@@ -1159,7 +1159,7 @@
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -1167,8 +1167,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -1218,7 +1218,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",
@@ -1260,11 +1260,11 @@
           "bodyPaddingPx": 64,
           "headerPx": 94,
           "diagramChromePx": 94,
-          "svgPx": 1025,
+          "svgPx": 1027,
           "cardsPx": 0,
           "viewBoxHeight": 660
         },
-        "viewBoxWidth": 1204,
+        "viewBoxWidth": 1202,
         "workflowLanes": [
           {
             "frameId": "lane-0",
@@ -1272,8 +1272,8 @@
             "nodeCount": 5,
             "nodeIds": [
               "new_email",
-              "get_email",
               "parse_decision",
+              "normalize_ref",
               "validate_gate",
               "file_email"
             ],
@@ -1323,7 +1323,7 @@
         "minimumProjectedNodeTextPx": 8,
         "minimumProjectedNonEdgeTextPx": 8,
         "minimumProjectedEdgeTextPx": 8,
-        "minimumProjectedNodeText": "Outlook trigger",
+        "minimumProjectedNodeText": "Outlook trigger (full thread)",
         "minimumProjectedNodeTextDetail": "context",
         "minimumProjectedNodeTextOwner": {
           "kind": "node",

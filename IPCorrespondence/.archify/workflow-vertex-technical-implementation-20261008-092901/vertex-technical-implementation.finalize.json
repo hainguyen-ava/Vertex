@@ -5,16 +5,16 @@
   "status": "pass",
   "type": "workflow",
   "quality": "showcase",
-  "startedAt": "2026-10-09T11:57:52.110Z",
+  "startedAt": "2026-10-13T17:08:21.947Z",
   "specification": {
-    "path": "C:\\Temp\\archify-vertex-technical\\candidate.json",
-    "sha256": "9cfc96f8e90bf2eec7cf69dccd44f8e359f0783c7cdfa61b5e493037ce365af4",
-    "bytes": 7046
+    "path": "C:\\Temp\\archify-tdd-fix\\candidate.json",
+    "sha256": "655b76755e6a69810f7c59c7ed7788733879ccefc0217525ee982e542cd4957a",
+    "bytes": 7555
   },
   "artifact": {
-    "path": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
-    "sha256": "92ef8863a112d70d628375f696cf4014a40f5975697ba1c8dc5e936986eab65d",
-    "bytes": 769829
+    "path": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
+    "sha256": "3ddb631c8d9154b42b0fe36ed86dd30a88d47eb7649480b04828eabdfb5c2e7e",
+    "bytes": 770861
   },
   "stages": {
     "validate": {
@@ -27,8 +27,8 @@
         "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
         "deliver",
         "workflow",
-        "C:\\Temp\\archify-vertex-technical\\candidate.json",
-        "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "C:\\Temp\\archify-tdd-fix\\candidate.json",
+        "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
         "--quality",
         "showcase",
         "--json"
@@ -38,8 +38,8 @@
         "ok": true,
         "command": "validate",
         "specification": {
-          "sha256": "9cfc96f8e90bf2eec7cf69dccd44f8e359f0783c7cdfa61b5e493037ce365af4",
-          "bytes": 7046
+          "sha256": "655b76755e6a69810f7c59c7ed7788733879ccefc0217525ee982e542cd4957a",
+          "bytes": 7555
         },
         "validation": {
           "checksPassed": 9,
@@ -54,33 +54,33 @@
     "deliver": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 3598,
+      "durationMs": 3413,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
         "deliver",
         "workflow",
-        "C:\\Temp\\archify-vertex-technical\\candidate.json",
-        "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "C:\\Temp\\archify-tdd-fix\\candidate.json",
+        "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
         "--quality",
         "showcase",
         "--json"
       ],
       "receipt": {
         "schemaVersion": 1,
-        "receiptId": "2e68814f-664e-4bbd-8eb6-cd1dd816af01",
+        "receiptId": "63896e2c-a986-42eb-9216-acb499911edd",
         "ok": true,
         "command": "deliver",
         "type": "workflow",
-        "input": "C:\\Temp\\archify-vertex-technical\\candidate.json",
-        "output": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "input": "C:\\Temp\\archify-tdd-fix\\candidate.json",
+        "output": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
         "specification": {
-          "sha256": "9cfc96f8e90bf2eec7cf69dccd44f8e359f0783c7cdfa61b5e493037ce365af4",
-          "bytes": 7046
+          "sha256": "655b76755e6a69810f7c59c7ed7788733879ccefc0217525ee982e542cd4957a",
+          "bytes": 7555
         },
         "artifact": {
-          "sha256": "92ef8863a112d70d628375f696cf4014a40f5975697ba1c8dc5e936986eab65d",
-          "bytes": 769829
+          "sha256": "3ddb631c8d9154b42b0fe36ed86dd30a88d47eb7649480b04828eabdfb5c2e7e",
+          "bytes": 770861
         },
         "validation": {
           "checksPassed": 9,
@@ -106,20 +106,20 @@
     "check": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 1890,
+      "durationMs": 1695,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
         "check",
-        "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
         "--require-provenance"
       ],
       "receipt": {
         "ok": true,
-        "file": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "file": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
         "artifact": {
-          "sha256": "92ef8863a112d70d628375f696cf4014a40f5975697ba1c8dc5e936986eab65d",
-          "bytes": 769829
+          "sha256": "3ddb631c8d9154b42b0fe36ed86dd30a88d47eb7649480b04828eabdfb5c2e7e",
+          "bytes": 770861
         },
         "checks": [
           {
@@ -186,16 +186,16 @@
             "containerBorderRuns": 0,
             "labelRouteClearanceIssues": 0,
             "labelCanvasOverflowIssues": 0,
-            "minLabelRouteClearance": 34.5,
+            "minLabelRouteClearance": 36.6,
             "desktopReadabilityIssues": 0,
             "viewportHeightIssues": 0,
-            "minProjectedNodeTextPx": 6.179401993355482,
+            "minProjectedNodeTextPx": 6.189683860232945,
             "maxBends": 2,
             "routesOverSuggestedBends": 0,
             "maxStretch": 1.063,
             "routesOverSuggestedStretch": 0,
             "minSegmentPx": 28,
-            "minInteriorSegmentPx": 769,
+            "minInteriorSegmentPx": 766.5,
             "shortSegmentCount": 0,
             "shortEndpointSegmentCount": 0,
             "shortInteriorSegmentCount": 0,
@@ -230,24 +230,24 @@
               "id": "new_email"
             },
             "minimumSourceTextPx": 8,
-            "minimumProjectedTextPx": 6.179401993355482,
+            "minimumProjectedTextPx": 6.189683860232945,
             "semanticTextCount": 34
           },
           "issues": []
         },
         "provenance": "current",
-        "deliveryReceiptId": "2e68814f-664e-4bbd-8eb6-cd1dd816af01"
+        "deliveryReceiptId": "63896e2c-a986-42eb-9216-acb499911edd"
       }
     },
     "browser-check": {
       "status": "pass",
       "exitCode": 0,
-      "durationMs": 3617,
+      "durationMs": 3570,
       "command": [
         "C:\\Program Files\\nodejs\\node.exe",
         "C:\\Users\\hai.a.nguyen\\.copilot\\skills\\archify\\bin\\archify.mjs",
         "browser-check",
-        "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
+        "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
         "--json",
         "--require-provenance"
       ],
@@ -260,11 +260,11 @@
         "status": "pass",
         "visualReview": "not-requested",
         "provenance": "current",
-        "deliveryReceiptId": "2e68814f-664e-4bbd-8eb6-cd1dd816af01",
+        "deliveryReceiptId": "63896e2c-a986-42eb-9216-acb499911edd",
         "artifact": {
-          "path": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.html",
-          "sha256": "92ef8863a112d70d628375f696cf4014a40f5975697ba1c8dc5e936986eab65d",
-          "bytes": 769829
+          "path": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.html",
+          "sha256": "3ddb631c8d9154b42b0fe36ed86dd30a88d47eb7649480b04828eabdfb5c2e7e",
+          "bytes": 770861
         },
         "state": {
           "detail": "read",
@@ -295,8 +295,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1344,
-              "diagramWidth": 1314,
+              "readerWidth": 1342,
+              "diagramWidth": 1312,
               "pageComposition": {
                 "bodyPaddingPx": 12,
                 "headerPx": 78,
@@ -305,7 +305,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -313,8 +313,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -364,7 +364,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -400,8 +400,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1406,
-              "diagramWidth": 1376,
+              "readerWidth": 1404,
+              "diagramWidth": 1374,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -410,7 +410,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -418,8 +418,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -469,7 +469,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -505,8 +505,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1552,
-              "diagramWidth": 1522,
+              "readerWidth": 1549,
+              "diagramWidth": 1519,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -515,7 +515,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -523,8 +523,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -574,7 +574,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -616,11 +616,11 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 94,
                 "diagramChromePx": 94,
-                "svgPx": 1025,
+                "svgPx": 1027,
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -628,8 +628,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -679,7 +679,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -768,8 +768,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1344,
-              "diagramWidth": 1314,
+              "readerWidth": 1342,
+              "diagramWidth": 1312,
               "pageComposition": {
                 "bodyPaddingPx": 12,
                 "headerPx": 78,
@@ -778,7 +778,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -786,8 +786,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -837,7 +837,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -873,8 +873,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1406,
-              "diagramWidth": 1376,
+              "readerWidth": 1404,
+              "diagramWidth": 1374,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -883,7 +883,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -891,8 +891,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -942,7 +942,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -978,8 +978,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1552,
-              "diagramWidth": 1522,
+              "readerWidth": 1549,
+              "diagramWidth": 1519,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -988,7 +988,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -996,8 +996,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -1047,7 +1047,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -1089,11 +1089,11 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 94,
                 "diagramChromePx": 94,
-                "svgPx": 1025,
+                "svgPx": 1027,
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -1101,8 +1101,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -1152,7 +1152,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -1193,8 +1193,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1344,
-              "diagramWidth": 1314,
+              "readerWidth": 1342,
+              "diagramWidth": 1312,
               "pageComposition": {
                 "bodyPaddingPx": 12,
                 "headerPx": 78,
@@ -1203,7 +1203,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -1211,8 +1211,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -1262,7 +1262,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -1298,8 +1298,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1406,
-              "diagramWidth": 1376,
+              "readerWidth": 1404,
+              "diagramWidth": 1374,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -1308,7 +1308,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -1316,8 +1316,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -1367,7 +1367,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -1403,8 +1403,8 @@
               "readerOverflow": null,
               "readerFit": null,
               "ok": true,
-              "readerWidth": 1552,
-              "diagramWidth": 1522,
+              "readerWidth": 1549,
+              "diagramWidth": 1519,
               "pageComposition": {
                 "bodyPaddingPx": 64,
                 "headerPx": 86,
@@ -1413,7 +1413,7 @@
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -1421,8 +1421,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -1472,7 +1472,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -1514,11 +1514,11 @@
                 "bodyPaddingPx": 64,
                 "headerPx": 94,
                 "diagramChromePx": 94,
-                "svgPx": 1025,
+                "svgPx": 1027,
                 "cardsPx": 0,
                 "viewBoxHeight": 660
               },
-              "viewBoxWidth": 1204,
+              "viewBoxWidth": 1202,
               "workflowLanes": [
                 {
                   "frameId": "lane-0",
@@ -1526,8 +1526,8 @@
                   "nodeCount": 5,
                   "nodeIds": [
                     "new_email",
-                    "get_email",
                     "parse_decision",
+                    "normalize_ref",
                     "validate_gate",
                     "file_email"
                   ],
@@ -1577,7 +1577,7 @@
               "minimumProjectedNodeTextPx": 8,
               "minimumProjectedNonEdgeTextPx": 8,
               "minimumProjectedEdgeTextPx": 8,
-              "minimumProjectedNodeText": "Outlook trigger",
+              "minimumProjectedNodeText": "Outlook trigger (full thread)",
               "minimumProjectedNodeTextDetail": "context",
               "minimumProjectedNodeTextOwner": {
                 "kind": "node",
@@ -1613,19 +1613,19 @@
   },
   "diagnostics": [],
   "evidence": {
-    "receipt": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.finalize.json",
-    "summaryReceipt": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.finalize-summary.json",
-    "browserCheckReceipt": "C:\\Temp\\archify-vertex-technical\\vertex-technical-implementation.browser-check.json"
+    "receipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.finalize.json",
+    "summaryReceipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Temp\\archify-tdd-fix\\vertex-technical-implementation.browser-check.json"
   },
   "visualReview": "not-requested",
-  "finishedAt": "2026-10-09T11:58:02.942Z",
-  "durationMs": 10832,
+  "finishedAt": "2026-10-13T17:08:32.232Z",
+  "durationMs": 10284,
   "update": {
     "status": "current",
     "installedVersion": "3.0.1",
     "availableVersion": "3.0.1",
     "releaseNotes": null,
-    "checkedAt": "2026-10-09T11:55:02.534Z",
+    "checkedAt": "2026-10-13T17:05:17.835Z",
     "source": "cache",
     "noticeRequired": false,
     "noticeText": null
