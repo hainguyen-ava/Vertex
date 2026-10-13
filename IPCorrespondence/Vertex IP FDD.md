@@ -179,12 +179,15 @@ This section consolidates the solution's functional requirements into nine numbe
 | FR-7.4 | **Conflicting references in quoted history** → create an exception and require manual review. |
 | FR-7.5 | **Invalid reference format (Folder Rule Validation failure)** → leave the email untouched in Inbox, do not create/file to a folder, add an exception record (Exception Type: Invalid Format) noting which validation rule failed, route for manual review, and include in the daily report. |
 | FR-7.6 | **Reference present only inside an attachment** → do not process in Phase 1; create an exception (attachment OCR/content extraction is out of scope for Phase 1). |
+| FR-7.7 | **Technical failure** (e.g., the email move/file action fails due to a system or connector error after a valid reference and folder were identified) → flag as a **Technical Failure**, distinct from a Business Exception, log the failure reason, route for operational remediation, and include in the daily report. |
+
+> FR-7.1–FR-7.5 and FR-7.6 above are classified as **Business Exceptions** (ambiguous or invalid business data — requires a human filing decision). FR-7.7 is classified as a **Technical Failure** (the business data was valid; the automation itself failed to execute). These two categories are reported separately — see FR-9.7.
 
 ### FR-8 — Audit Logging
 
 | ID | Requirement |
 |---|---|
-| FR-8.1 | The agent shall generate an audit entry for every processed email, capturing: Message ID, Sender, Subject, Reference, Folder, Processing Result (Filed / Created Folder and Filed / Exception), Timestamp (UTC), and Exception Type (when applicable). |
+| FR-8.1 | The agent shall generate an audit entry for every processed email, capturing: Message ID, Sender, Subject, Reference, Folder, Processing Result (**Filed** / **Business Exception** / **Technical Failure**), Timestamp (UTC), and Exception Type (when applicable). |
 
 ### FR-9 — Daily Reporting
 
@@ -196,6 +199,7 @@ This section consolidates the solution's functional requirements into nine numbe
 | FR-9.4 | The report shall list **filing activity** for the day (message, sender, reference, folder, result). |
 | FR-9.5 | The report shall list all **exceptions/unprocessed emails** for the day, each with sender, exception type, reason, and recommended action. |
 | FR-9.6 | The report shall list **normalization activity** (original value, normalized value, source field) for the day. |
+| FR-9.7 | For every processed email, the report shall show a consolidated **Family Reference, Status, and Destination/Reason**, where Status is one of **Filed**, **Business Exception**, or **Technical Failure**, so business owners can distinguish items needing a filing decision from items needing IT/system follow-up. |
 
 ## 6. Reference Identification
 
@@ -324,6 +328,15 @@ Country-specific folders are ignored for routing purposes.
   - Do not process in Phase 1
   - Create exception
 
+### Exception 7 – Technical Failure
+- **Condition:** A valid reference and destination folder were identified, but the email move/file action failed due to a system or connector error (not a business data problem).
+- **Example:** `VPI-18-114` identified correctly; the Outlook move action fails.
+- **Action:**
+  - Flag as **Technical Failure** (distinct from the Business Exceptions in Exceptions 1–6)
+  - Log the failure reason
+  - Route for operational/IT remediation
+  - Include in daily report
+
 ## 11. Folder Creation Process
 
 When a family folder does not exist:
@@ -346,9 +359,9 @@ Every processed email shall generate an audit entry.
 | Subject | Original email subject line, unmodified |
 | Reference | Normalized matter/family reference detected (e.g., VPI-18-114); blank if none found |
 | Folder | Destination family folder the email was filed to, or the existing folder it was matched against |
-| Processing Result | Filed / Created Folder and Filed / Exception |
+| Processing Result | Filed / Business Exception / Technical Failure |
 | Timestamp | Date and time the email was processed (UTC) |
-| Exception Type | Populated only when Processing Result = Exception (e.g., No Reference Found, Multiple References, Invalid Format) |
+| Exception Type | Populated when Processing Result = Business Exception (e.g., No Reference Found, Multiple References, Invalid Format) or Technical Failure (e.g., Email Move Failed) |
 
 *Each field is captured per processed email; descriptions to be finalized during build.*
 
@@ -403,6 +416,23 @@ The send time is configured via the Power Automate recurrence trigger for the da
 | | | |
 
 *Structural template only — populated at runtime from the day's processed email activity; shown empty here by design.*
+
+### Email Template Mock — Per-Email Status
+
+Per **FR-9.7**, the daily report email body includes a consolidated, per-email status table so business owners can see — at a glance — what was filed automatically, what needs a **business** filing decision, and what needs **IT** follow-up. Mock example:
+
+| Email identifier | Family reference | Status | Destination / reason |
+|---|---|---|---|
+| Email-001 | SEM-25-786 | Filed | Inbox/SEM-25-786 |
+| Email-002 | — | Business Exception | No reference found; email left in Inbox |
+| Email-003 | — | Business Exception | Multiple family references found |
+| Email-004 | VPI-18-114 | Technical Failure | Email move failed |
+
+- **Filed** — the agent matched a valid reference, located (or created) the folder, and moved the email successfully. *Destination/reason* shows the resulting folder path.
+- **Business Exception** — the business data in the email was ambiguous or invalid (no reference found, multiple references, subject/body conflict, invalid format, or attachment-only). *Destination/reason* explains the ambiguity. Routed to Vertex IP Operations for a manual filing decision.
+- **Technical Failure** — the business data was valid, but the automation itself failed to execute the move (e.g., a connector/system error). *Destination/reason* names the failed action. Routed to IT/operations for remediation, not a business filing decision.
+
+*Mock data shown for illustration; the production report is populated at runtime from the day's processed email activity.*
 
 ## 14. Non-Functional Requirements
 
@@ -463,6 +493,7 @@ Operational KPIs including:
 | Country suffixes | Remove for routing |
 | Duplicate processing | Prevent re-processing |
 | Folder rename | Do not rename automatically (one-time pre-go-live migration only, see §8) |
+| Technical failure during filing | Flag as Technical Failure (not a Business Exception); route to IT for remediation |
 
 ---
 

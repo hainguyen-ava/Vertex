@@ -64,12 +64,15 @@ Consolidated from the architecture diagram (`vertex-email-rules.html`) and the F
 | FR-7.4 | **Conflicting references in quoted history** → create an exception and require manual review. |
 | FR-7.5 | **Invalid reference format (Folder Rule Validation failure)** → leave the email untouched in Inbox, do not create/file to a folder, add an exception record (Exception Type: Invalid Format) noting which validation rule failed, route for manual review, and include in the daily report. |
 | FR-7.6 | **Reference present only inside an attachment** → do not process in Phase 1; create an exception (attachment OCR/content extraction is out of scope for Phase 1). |
+| FR-7.7 | **Technical failure** (e.g., the email move/file action fails due to a system or connector error after a valid reference and folder were identified) → flag as a **Technical Failure**, distinct from a Business Exception, log the failure reason, route for operational remediation, and include in the daily report. |
+
+> FR-7.1–FR-7.5 and FR-7.6 above are classified as **Business Exceptions** (ambiguous or invalid business data — requires a human filing decision). FR-7.7 is classified as a **Technical Failure** (the business data was valid; the automation itself failed to execute). These two categories are reported separately — see FR-9.7.
 
 ### FR-8 — Audit Logging
 
 | ID | Requirement |
 |---|---|
-| FR-8.1 | The agent shall generate an audit entry for every processed email, capturing: Message ID, Sender, Subject, Reference, Folder, Processing Result (Filed / Created Folder and Filed / Exception), Timestamp (UTC), and Exception Type (when applicable). |
+| FR-8.1 | The agent shall generate an audit entry for every processed email, capturing: Message ID, Sender, Subject, Reference, Folder, Processing Result (**Filed** / **Business Exception** / **Technical Failure**), Timestamp (UTC), and Exception Type (when applicable). |
 
 ### FR-9 — Daily Reporting
 
@@ -81,6 +84,18 @@ Consolidated from the architecture diagram (`vertex-email-rules.html`) and the F
 | FR-9.4 | The report shall list **filing activity** for the day (message, sender, reference, folder, result). |
 | FR-9.5 | The report shall list all **exceptions/unprocessed emails** for the day, each with sender, exception type, reason, and recommended action. |
 | FR-9.6 | The report shall list **normalization activity** (original value, normalized value, source field) for the day. |
+| FR-9.7 | For every processed email, the report shall show a consolidated **Family Reference, Status, and Destination/Reason**, where Status is one of **Filed**, **Business Exception**, or **Technical Failure**, so business owners can distinguish items needing a filing decision from items needing IT/system follow-up. |
+
+### Daily Report — Email Template Mock
+
+The table below illustrates the per-email status table (FR-9.7) as it appears in the daily report email body:
+
+| Email identifier | Family reference | Status | Destination / reason |
+|---|---|---|---|
+| Email-001 | SEM-25-786 | Filed | Inbox/SEM-25-786 |
+| Email-002 | — | Business Exception | No reference found; email left in Inbox |
+| Email-003 | — | Business Exception | Multiple family references found |
+| Email-004 | VPI-18-114 | Technical Failure | Email move failed |
 
 ---
 
