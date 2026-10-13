@@ -265,6 +265,7 @@
       <div class="rail-mark vertex"><span class="triangle"></span><span class="word">VERTEX <b>PHARMACEUTICALS</b></span></div>
       <p class="rail-eyebrow">Phase 1 solution walkthrough</p>
       <p class="rail-title">IP Correspondence Automation Agent</p>
+      <p class="rail-eyebrow" style="margin-top:4px;opacity:.75;">FDD v1.0 · October 13, 2026</p>
     </div>
 
     <nav class="rail-nav">
@@ -337,7 +338,7 @@
             <li>Reference validated against folder-naming rules</li>
             <li>Folder found or created, email filed automatically</li>
             <li>Every action logged for audit</li>
-            <li>One daily report to business owners — new folders &amp; exceptions</li>
+            <li>One daily report to business owners — simple per-email status table</li>
           </ul>
         </div>
       </div>
@@ -400,15 +401,15 @@
             <tr><td class="fr-id">FR-2</td><td>Reference (Ref #) Identification</td><td>Scan subject first, then body, then quoted history; recognize common lead-in phrases and known matter prefixes.</td></tr>
             <tr><td class="fr-id">FR-3</td><td>Reference Normalization</td><td>Standardize detected references — uppercase, separators, country codes, subcase suffixes, spacing.</td></tr>
             <tr><td class="fr-id">FR-4</td><td>Folder Rule Validation</td><td>Vertex references require exactly 2 segments; non-Vertex references require prefix + 2 segments. Failures raise an Invalid Format exception.</td></tr>
-            <tr><td class="fr-id">FR-5</td><td>Folder Management</td><td>Search for a matching folder; move the email if found, create a new folder if not — every creation is audited.</td></tr>
+            <tr><td class="fr-id">FR-5</td><td>Folder Management</td><td>Search for a matching folder; move the email if found, create a new folder if not — every creation is audited. Includes a one-time migration of existing non-VPI-prefixed folders prior to go-live.</td></tr>
             <tr><td class="fr-id">FR-6</td><td>Automated Filing Rules</td><td>Single valid family → auto-file; folder located → move; folder missing → create, move, and record.</td></tr>
-            <tr><td class="fr-id">FR-7</td><td>Exception Handling</td><td>No reference, multiple references, subject/body conflicts, invalid format, or attachment-only references all route to manual review with a documented reason.</td></tr>
-            <tr><td class="fr-id">FR-8</td><td>Audit Logging</td><td>Every processed email generates an audit entry — message ID, sender, subject, reference, folder, result, timestamp, exception type.</td></tr>
-            <tr><td class="fr-id">FR-9</td><td>Daily Reporting</td><td>One daily report to business owners — executive summary, new folders, filing activity, exceptions, and normalization activity.</td></tr>
+            <tr><td class="fr-id">FR-7</td><td>Exception Handling</td><td>No reference, multiple references, subject/body conflicts, invalid format, or attachment-only references route to manual review as Business Exceptions; system/connector failures are logged separately as Technical Failures.</td></tr>
+            <tr><td class="fr-id">FR-8</td><td>Audit Logging</td><td>Every processed email generates an audit entry — message ID, sender, subject, reference, folder, result (Filed / Business Exception / Technical Failure), timestamp, exception type.</td></tr>
+            <tr><td class="fr-id">FR-9</td><td>Daily Reporting</td><td>One daily report to business owners — a simple per-email status table (reference, status, destination/reason), distinguishing Business Exceptions from Technical Failures.</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="footnote">Full requirement-level detail (FR-1.1 through FR-9.6) is in the Vertex IP FDD, Section 5 — Functional Requirements, and in <code>Vertex IP FDD - Functional Requirements.md</code>.</p>
+      <p class="footnote">Full requirement-level detail (FR-1.1 through FR-9.2) is in the Vertex IP FDD, Section 5 — Functional Requirements, and in <code>Vertex IP FDD - Functional Requirements.md</code> (v1.0).</p>
     </section>
 
     <section id="exceptions" class="reveal">
@@ -426,6 +427,7 @@
             <tr><td>Conflicting Quoted History</td><td>Latest vs. older quoted references disagree</td><td>Create exception; require manual review</td></tr>
             <tr><td>Invalid Format</td><td>Reference fails Folder Rule Validation</td><td>Leave untouched, log Invalid Format exception, route for review, include in report</td></tr>
             <tr><td>Attachment Only</td><td>Reference appears only inside an attachment</td><td>Not processed in Phase 1; create exception (OCR is out of scope)</td></tr>
+            <tr><td>Technical Failure</td><td>Email move/file action fails due to a system or connector error (valid reference and folder already identified)</td><td>Flag as Technical Failure (not a Business Exception), log failure reason, route for IT remediation, include in daily report</td></tr>
           </tbody>
         </table>
       </div>
@@ -457,7 +459,7 @@
 
     <div class="doc-footer">
       <span>Vertex IP Correspondence Automation Agent · Prepared for Vertex Pharmaceuticals by Accenture / Avanade</span>
-      <span>Hai Nguyen · October 2026</span>
+      <span>FDD v1.0 · Hai Nguyen · October 13, 2026</span>
     </div>
 
   </main>
