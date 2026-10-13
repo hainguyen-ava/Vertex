@@ -88,7 +88,7 @@ Consolidated from the architecture diagram (`vertex-email-rules.html`) and the F
 
 ### Daily Report — Email Template Mock
 
-The table below illustrates the per-email status table (FR-9.7) as it appears in the daily report email body:
+Status is one of **Filed** / **Business Exception** / **Technical Failure**. Simple table, one row per email:
 
 | Email identifier | Family reference | Status | Destination / reason |
 |---|---|---|---|

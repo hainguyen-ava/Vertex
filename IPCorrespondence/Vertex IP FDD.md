@@ -419,7 +419,7 @@ The send time is configured via the Power Automate recurrence trigger for the da
 
 ### Email Template Mock — Per-Email Status
 
-Per **FR-9.7**, the daily report email body includes a consolidated, per-email status table so business owners can see — at a glance — what was filed automatically, what needs a **business** filing decision, and what needs **IT** follow-up. Mock example:
+Simple table, one row per email. Status is one of **Filed** / **Business Exception** / **Technical Failure**:
 
 | Email identifier | Family reference | Status | Destination / reason |
 |---|---|---|---|
@@ -427,10 +427,6 @@ Per **FR-9.7**, the daily report email body includes a consolidated, per-email s
 | Email-002 | — | Business Exception | No reference found; email left in Inbox |
 | Email-003 | — | Business Exception | Multiple family references found |
 | Email-004 | VPI-18-114 | Technical Failure | Email move failed |
-
-- **Filed** — the agent matched a valid reference, located (or created) the folder, and moved the email successfully. *Destination/reason* shows the resulting folder path.
-- **Business Exception** — the business data in the email was ambiguous or invalid (no reference found, multiple references, subject/body conflict, invalid format, or attachment-only). *Destination/reason* explains the ambiguity. Routed to Vertex IP Operations for a manual filing decision.
-- **Technical Failure** — the business data was valid, but the automation itself failed to execute the move (e.g., a connector/system error). *Destination/reason* names the failed action. Routed to IT/operations for remediation, not a business filing decision.
 
 *Mock data shown for illustration; the production report is populated at runtime from the day's processed email activity.*
 
