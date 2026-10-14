@@ -265,7 +265,7 @@
       <div class="rail-mark vertex"><span class="triangle"></span><span class="word">VERTEX <b>PHARMACEUTICALS</b></span></div>
       <p class="rail-eyebrow">Phase 1 solution walkthrough</p>
       <p class="rail-title">IP Correspondence Automation Agent</p>
-      <p class="rail-eyebrow" style="margin-top:4px;opacity:.75;">FDD v1.0 · October 13, 2026</p>
+      <p class="rail-eyebrow" style="margin-top:4px;opacity:.75;">FDD v1.1 · October 14, 2026</p>
     </div>
 
     <nav class="rail-nav">
@@ -398,7 +398,7 @@
           <thead><tr><th style="width:90px;">ID</th><th>Requirement Area</th><th>Summary</th></tr></thead>
           <tbody>
             <tr><td class="fr-id">FR-1</td><td>Email Ingestion</td><td>Monitor the shared mailbox; read every new email, reply, and acknowledgement within minutes of receipt.</td></tr>
-            <tr><td class="fr-id">FR-2</td><td>Reference (Ref #) Identification</td><td>Scan subject first, then body, then quoted history; recognize common lead-in phrases and known matter prefixes.</td></tr>
+            <tr><td class="fr-id">FR-2</td><td>Reference (Ref #) Identification</td><td>Scan subject first, then body, then quoted history; recognize common lead-in phrases and known matter prefixes. Each email is evaluated independently — Phase 1 does not track reference changes across a thread (Phase 2).</td></tr>
             <tr><td class="fr-id">FR-3</td><td>Reference Normalization</td><td>Standardize detected references — uppercase, separators, country codes, subcase suffixes, spacing.</td></tr>
             <tr><td class="fr-id">FR-4</td><td>Folder Rule Validation</td><td>Vertex references require exactly 2 segments; non-Vertex references require prefix + 2 segments. Failures raise an Invalid Format exception.</td></tr>
             <tr><td class="fr-id">FR-5</td><td>Folder Management</td><td>Search for a matching folder; move the email if found, create a new folder if not — every creation is audited. Includes a one-time migration of existing non-VPI-prefixed folders prior to go-live.</td></tr>
@@ -409,7 +409,7 @@
           </tbody>
         </table>
       </div>
-      <p class="footnote">Full requirement-level detail (FR-1.1 through FR-9.2) is in the Vertex IP FDD, Section 5 — Functional Requirements, and in <code>Vertex IP FDD - Functional Requirements.md</code> (v1.0).</p>
+      <p class="footnote">Full requirement-level detail (FR-1.1 through FR-9.2, FR-2.5) is in the Vertex IP FDD, Section 5 — Functional Requirements, and in <code>Vertex IP FDD - Functional Requirements.md</code> (v1.1).</p>
     </section>
 
     <section id="exceptions" class="reveal">
@@ -424,13 +424,14 @@
             <tr><td>No Reference Found</td><td>No valid reference detected anywhere in the email</td><td>Leave in Inbox, add to exception queue, include in daily report</td></tr>
             <tr><td>Multiple Family References</td><td>More than one valid reference detected</td><td>No auto-filing; route for manual review</td></tr>
             <tr><td>Subject/Body Conflict</td><td>Different references in subject vs. body</td><td>Do not prioritize automatically; route for manual review</td></tr>
-            <tr><td>Conflicting Quoted History</td><td>Latest vs. older quoted references disagree</td><td>Create exception; require manual review</td></tr>
+            <tr><td>Conflicting Quoted History</td><td>Within the <em>same email</em>, latest vs. older quoted references disagree</td><td>Create exception; require manual review — does not apply across separate emails in a thread (see Assumptions)</td></tr>
             <tr><td>Invalid Format</td><td>Reference fails Folder Rule Validation</td><td>Leave untouched, log Invalid Format exception, route for review, include in report</td></tr>
             <tr><td>Attachment Only</td><td>Reference appears only inside an attachment</td><td>Not processed in Phase 1; create exception (OCR is out of scope)</td></tr>
             <tr><td>Technical Failure</td><td>Email move/file action fails due to a system or connector error (valid reference and folder already identified)</td><td>Flag as Technical Failure (not a Business Exception), log failure reason, route for IT remediation, include in daily report</td></tr>
           </tbody>
         </table>
       </div>
+      <p class="footnote">Assumption: each email (including replies in an existing thread) is filed based solely on the reference found in that email. Phase 1 does not track that a later email in the same conversation introduced a different reference than earlier messages — e.g., a thread that starts on VPI-12-123 and later drifts to VPI-12-124/125 is simply filed under each newly identified reference. Conversation/thread-level reference tracking is a Phase 2 enhancement (see Future Phase Roadmap).</p>
     </section>
 
     <section id="roadmap" class="reveal">
@@ -439,6 +440,11 @@
       <h2>Future Phase Roadmap</h2>
       <p class="lede">Phase 1 already uses Azure OpenAI (via Foundry) for reference extraction. The items below are additional, not-yet-scoped enhancements for future phases.</p>
       <div class="grid-3">
+        <div class="roadmap-card">
+          <span class="badge future">Future</span>
+          <strong>Conversation / Thread-Level Reference Tracking</strong>
+          <p>Maintain state across an email thread to detect when a later email introduces a different reference than earlier messages in the same conversation, and flag that drift for review instead of auto-filing under the new reference.</p>
+        </div>
         <div class="roadmap-card">
           <span class="badge future">Future</span>
           <strong>Attachment Processing</strong>
@@ -459,7 +465,7 @@
 
     <div class="doc-footer">
       <span>Vertex IP Correspondence Automation Agent · Prepared for Vertex Pharmaceuticals by Accenture / Avanade</span>
-      <span>FDD v1.0 · Hai Nguyen · October 13, 2026</span>
+      <span>FDD v1.1 · Hai Nguyen · October 14, 2026</span>
     </div>
 
   </main>

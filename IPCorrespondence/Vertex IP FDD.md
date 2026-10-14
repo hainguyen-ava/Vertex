@@ -7,9 +7,9 @@
 | **Project** | IP Correspondence Automation |
 | **Solution Platform** | Microsoft Power Platform (Power Automate, Outlook, Dataverse/SharePoint) |
 | **Document Type** | Functional Design Document (FDD) |
-| **Version** | 1.0 |
+| **Version** | 1.1 |
 | **Prepared By** | Hai Nguyen |
-| **Date** | October 13, 2026 |
+| **Date** | October 14, 2026 |
 
 ---
 
@@ -20,6 +20,7 @@
 | Version | Date | Author | Description |
 |---|---|---|---|
 | 1.0 | October 13, 2026 | Hai Nguyen | Initial baseline issued for internal and stakeholder review |
+| 1.1 | October 14, 2026 | Hai Nguyen | Clarified Phase 1 scope: each email is evaluated independently (no conversation/thread-level reference tracking); added FR-2.5, Assumptions, and Exception 4 scope note; moved thread-level reference-drift tracking to Phase 2 |
 
 ### Approvals
 
@@ -115,6 +116,14 @@ The proposed solution automates these activities while preserving business overs
 - Patent docketing activities
 - Patent workflow management
 - Legal review activities
+- Conversation/thread-level reference tracking (see Assumptions below; targeted for Phase 2)
+
+### Assumptions
+
+- **Each email is evaluated independently.** As long as the agent can identify a valid reference # within a given email (per the search order in FR-2.1–FR-2.3), it files that email — regardless of what reference(s) appeared in earlier emails in the same conversation/thread.
+- **The agent does not track conversation state across emails.** Phase 1 has no concept of "this thread was previously associated with reference X." If a later email in an existing thread introduces a different reference, the agent files it under the newly identified reference; it does not flag this as a deviation from the thread's earlier reference.
+  > *Example:* An email chain starts on Day 1–2 with no reference, picks up `VPI-12-123` on Day 3 (confirmed again on Day 5), then on Day 6 two replies in that **same thread** introduce `VPI-12-124` and `VPI-12-125`. In Phase 1, each of those Day 6 emails is simply filed under its own newly identified reference. Detecting that this is the *same conversation* drifting to new references is a **Phase 2** capability (see §15).
+- Multi-thread, multi-reference conversation correlation (i.e., recognizing that several separate email threads all relate to one another) is likewise out of scope for Phase 1.
 
 ## 5. Functional Requirements
 
@@ -135,6 +144,7 @@ This section consolidates the solution's functional requirements into nine numbe
 | FR-2.2 | If no reference is found in the subject or current body, the agent shall inspect the **most recent quoted correspondence** in the thread. |
 | FR-2.3 | The agent shall recognize references following common lead-in phrases, including "Client Reference:", "Your Ref", "Your Reference:", "Your Ref No", or similar. |
 | FR-2.4 | The agent shall support the current known matter prefixes, to be confirmed with Vertex IP Operations prior to go-live; new prefixes require a change request. |
+| FR-2.5 | The agent shall evaluate each incoming email independently based solely on the reference identified **within that email** (per FR-2.1–FR-2.3). The agent shall not maintain conversation/thread-level state to detect when a later email in an existing thread carries a different reference than earlier emails in that same thread; such cross-email reference-drift tracking is a Phase 2 enhancement (see §15). |
 
 ### FR-3 — Reference Normalization
 
@@ -176,7 +186,7 @@ This section consolidates the solution's functional requirements into nine numbe
 | FR-7.1 | **No reference found** → leave the email in the Inbox, add it to the exception queue, document the reason, and include it in the daily report. |
 | FR-7.2 | **Multiple family references detected** → do not auto-file; route for manual review. |
 | FR-7.3 | **Subject/body conflict** (different references in subject vs. body) → do not determine priority automatically; route for manual review. |
-| FR-7.4 | **Conflicting references in quoted history** → create an exception and require manual review. |
+| FR-7.4 | **Conflicting references in quoted history** (within the same email — i.e., the current message's subject/body disagrees with a reference found in its own quoted correspondence) → create an exception and require manual review. This does **not** apply across separate emails in a thread over time; see FR-2.5 and the Assumptions in §4. |
 | FR-7.5 | **Invalid reference format (Folder Rule Validation failure)** → leave the email untouched in Inbox, do not create/file to a folder, add an exception record (Exception Type: Invalid Format) noting which validation rule failed, route for manual review, and include in the daily report. |
 | FR-7.6 | **Reference present only inside an attachment** → do not process in Phase 1; create an exception (attachment OCR/content extraction is out of scope for Phase 1). |
 | FR-7.7 | **Technical failure** (e.g., the email move/file action fails due to a system or connector error after a valid reference and folder were identified) → flag as a **Technical Failure**, distinct from a Business Exception, log the failure reason, route for operational remediation, and include in the daily report. |
@@ -217,6 +227,10 @@ If no reference is detected in:
 - Current body
 
 the system shall inspect the most recent quoted correspondence.
+
+### Per-Email Evaluation (Phase 1 Scope)
+
+Each incoming email — including replies within an existing thread — is evaluated **on its own**, using only the reference identified within that specific message via the search order above. The system does not retain conversation/thread-level state about which reference(s) were associated with earlier emails in the same thread, and does not flag a later email as a "deviation" if it introduces a different reference than prior messages in that thread. Tracking reference changes across an ongoing conversation is a Phase 2 enhancement (see §15).
 
 ## 7. Reference Normalization
 
@@ -303,10 +317,12 @@ Country-specific folders are ignored for routing purposes.
   - Route for manual review
 
 ### Exception 4 – Conflicting References in Quoted History
-- **Example:** Latest quoted: VPI-19-117 / Older quoted: VPI-20-015
+- **Condition:** Within a **single email**, the current message's subject/body disagrees with a reference found in that same message's own quoted correspondence.
+- **Example:** Latest quoted: VPI-19-117 / Older quoted (same email): VPI-20-015
 - **Action:**
   - Create exception
   - Require manual review
+- **Out of scope for Phase 1:** This exception does not apply across separate emails sent over time in the same thread — see "Per-Email Evaluation" in §6 and the Assumptions in §4.
 
 ### Exception 5 – Folder Rule Validation Failure (Invalid Format)
 - **Condition:** A reference is detected but fails Folder Rule Validation — a Vertex reference without exactly 2 segments, or a non-Vertex reference without a prefix and 2 segments.
@@ -402,6 +418,11 @@ Simple table, one row per email. Status is one of **Filed** / **Business Excepti
 
 > **Note:** AI-assisted reference extraction via Azure OpenAI (Foundry) is now part of the **Phase 1** technical implementation (see the Vertex IP Technical Design Document), not a future enhancement.
 
+### Conversation / Thread-Level Reference Tracking
+- Maintain state across an email thread to detect when a later email introduces a different reference than earlier emails in the same conversation
+- Flag/route such reference changes for review instead of filing automatically under the newly detected reference
+- Correlate related references across separate (multi-thread) conversations
+
 ### Attachment Processing
 - OCR
 - PDF parsing
@@ -441,6 +462,7 @@ Operational KPIs including:
 | Duplicate processing | Prevent re-processing |
 | Folder rename | Do not rename automatically (one-time pre-go-live migration only, see §8) |
 | Technical failure during filing | Flag as Technical Failure (not a Business Exception); route to IT for remediation |
+| Reference changes across separate emails in the same conversation/thread | Phase 1: each email filed independently under its own identified reference; no drift tracking (Phase 2 — see §15) |
 
 ---
 

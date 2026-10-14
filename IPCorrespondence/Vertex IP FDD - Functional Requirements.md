@@ -3,8 +3,8 @@
 
 | | |
 |---|---|
-| **Version** | 1.0 |
-| **Date** | October 13, 2026 |
+| **Version** | 1.1 |
+| **Date** | October 14, 2026 |
 
 Consolidated from the architecture diagram (`vertex-email-rules.html`) and the Functional Design Document (`Vertex IP FDD - 1.0.docx`).
 
@@ -13,6 +13,7 @@ Consolidated from the architecture diagram (`vertex-email-rules.html`) and the F
 | Version | Date | Description |
 |---|---|---|
 | 1.0 | October 13, 2026 | Initial baseline issued for internal and stakeholder review |
+| 1.1 | October 14, 2026 | Added FR-2.5 (per-email independent evaluation, no thread-level reference tracking); clarified FR-7.4 scope to within a single email |
 
 ---
 
@@ -31,6 +32,7 @@ Consolidated from the architecture diagram (`vertex-email-rules.html`) and the F
 | FR-2.2 | If no reference is found in the subject or current body, the agent shall inspect the **most recent quoted correspondence** in the thread. |
 | FR-2.3 | The agent shall recognize references following common lead-in phrases, including "Client Reference:", "Your Ref", "Your Reference:", "Your Ref No", or similar. |
 | FR-2.4 | The agent shall support the current known matter prefixes, to be confirmed with Vertex IP Operations prior to go-live; new prefixes require a change request. |
+| FR-2.5 | The agent shall evaluate each incoming email independently based solely on the reference identified **within that email** (per FR-2.1–FR-2.3). The agent shall not maintain conversation/thread-level state to detect when a later email in an existing thread carries a different reference than earlier emails in that same thread; such cross-email reference-drift tracking is a Phase 2 enhancement. |
 
 ### FR-3 — Reference Normalization
 
@@ -72,7 +74,7 @@ Consolidated from the architecture diagram (`vertex-email-rules.html`) and the F
 | FR-7.1 | **No reference found** → leave the email in the Inbox, add it to the exception queue, document the reason, and include it in the daily report. |
 | FR-7.2 | **Multiple family references detected** → do not auto-file; route for manual review. |
 | FR-7.3 | **Subject/body conflict** (different references in subject vs. body) → do not determine priority automatically; route for manual review. |
-| FR-7.4 | **Conflicting references in quoted history** → create an exception and require manual review. |
+| FR-7.4 | **Conflicting references in quoted history** (within the same email) → create an exception and require manual review. This does **not** apply across separate emails in a thread over time; see FR-2.5. |
 | FR-7.5 | **Invalid reference format (Folder Rule Validation failure)** → leave the email untouched in Inbox, do not create/file to a folder, add an exception record (Exception Type: Invalid Format) noting which validation rule failed, route for manual review, and include in the daily report. |
 | FR-7.6 | **Reference present only inside an attachment** → do not process in Phase 1; create an exception (attachment OCR/content extraction is out of scope for Phase 1). |
 | FR-7.7 | **Technical failure** (e.g., the email move/file action fails due to a system or connector error after a valid reference and folder were identified) → flag as a **Technical Failure**, distinct from a Business Exception, log the failure reason, route for operational remediation, and include in the daily report. |
